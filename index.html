@@ -42,158 +42,284 @@ z-index:9999;
 
 /* HERO */
 
+/* HERO */
+
 .hero{
+
 height:100vh;
+
 position:relative;
+
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-text-align:center;
+
 overflow:hidden;
 
 background:
+radial-gradient(circle at top,
+rgba(161,126,76,0.08),
+transparent 40%),
+
 linear-gradient(
-rgba(16,24,20,0.62),
-rgba(28,18,10,0.55)
-),
+135deg,
+#0f1714 0%,
+#17211d 35%,
+#221912 100%
+);
 
-url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=1800');
-
-background-size:cover;
-background-position:center;
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
 }
+
+/* TEXTURE */
 
 .hero::before{
+
 content:"";
+
 position:absolute;
-width:120%;
-height:120%;
+inset:0;
+
+background-image:
+url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
+
+opacity:0.18;
+
+pointer-events:none;
+
+}
+
+/* FLOATING LIGHT */
+
+.hero-overlay{
+
+position:absolute;
+
+width:900px;
+height:900px;
+
+border-radius:50%;
+
 background:
-radial-gradient(circle at center, rgba(255,215,150,0.12), transparent 60%);
-animation:glow 8s ease-in-out infinite alternate;
+radial-gradient(circle,
+rgba(212,175,55,0.08),
+transparent 70%);
+
+filter:blur(20px);
+
+animation:floatGlow 9s ease-in-out infinite alternate;
+
 }
 
-@keyframes glow{
+@keyframes floatGlow{
+
 from{
-transform:scale(1);
-opacity:0.4;
+transform:translateY(-20px) scale(1);
 }
+
 to{
-transform:scale(1.15);
-opacity:0.8;
-}
+transform:translateY(20px) scale(1.08);
 }
 
-/* SEAL */
+}
 
-.seal{
+/* MONOGRAM */
+
+.monogram-wrap{
+
 position:relative;
 
-width:180px;
-height:180px;
-
-border-radius:50%;
-
 display:flex;
-justify-content:center;
+flex-direction:column;
 align-items:center;
 
+z-index:2;
+
+}
+
+.monogram{
+
 font-family:'Cormorant Garamond',serif;
-font-size:4.8rem;
+
+font-size:8rem;
+
 font-style:italic;
+
 font-weight:500;
 
-letter-spacing:-6px;
+line-height:1;
 
-color:#f5dfb2;
+letter-spacing:-12px;
 
 background:
-radial-gradient(circle at top,
-rgba(255,240,210,0.18),
-rgba(255,240,210,0.03));
+linear-gradient(
+180deg,
+#f7e7bc 0%,
+#c9a15d 45%,
+#f3ddb0 100%
+);
 
-border:1px solid rgba(255,230,180,0.25);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 
-box-shadow:
-0 0 40px rgba(212,175,55,0.12),
-inset 0 0 25px rgba(255,240,210,0.08);
+text-shadow:
+0 0 30px rgba(212,175,55,0.18);
 
-backdrop-filter:blur(8px);
+animation:monogramFloat 5s ease-in-out infinite;
 
-animation:float 5s ease-in-out infinite;
 }
 
-.seal::before{
-content:"";
+@keyframes monogramFloat{
 
-position:absolute;
-inset:12px;
-
-border-radius:50%;
-
-border:1px solid rgba(255,240,210,0.15);
+0%{
+transform:translateY(0px);
 }
 
-@keyframes float{
-0%{transform:translateY(0px);}
-50%{transform:translateY(-10px);}
-100%{transform:translateY(0px);}
+50%{
+transform:translateY(-8px);
 }
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+.monogram-line{
+
+margin-top:18px;
+
+width:120px;
+height:1px;
+
+background:
+linear-gradient(
+to right,
+transparent,
+rgba(255,220,150,0.8),
+transparent
+);
+
+}
+
+/* POETIC LINE */
 
 .poetic-line{
-margin-top:40px;
-max-width:700px;
+
+margin-top:50px;
 
 font-family:'Cormorant Garamond',serif;
-font-size:2rem;
-line-height:1.5;
 
-color:#f4eee5;
+font-size:2rem;
+
+font-weight:300;
+
+line-height:1.7;
+
+letter-spacing:0.4px;
+
+text-align:center;
+
+color:#efe5d2;
+
+z-index:2;
+
+opacity:0;
+
+animation:poeticReveal 2.5s ease forwards;
+animation-delay:0.6s;
 
 padding:0 20px;
 
-animation:fadeIn 2s ease forwards;
 }
 
-@keyframes fadeIn{
+@keyframes poeticReveal{
+
 from{
 opacity:0;
 transform:translateY(20px);
 }
+
 to{
 opacity:1;
 transform:translateY(0);
 }
+
 }
 
+/* MUSIC BUTTON */
+
 .music-btn{
-margin-top:35px;
-padding:14px 30px;
-border:none;
-border-radius:40px;
 
-background:rgba(255,255,255,0.12);
+margin-top:40px;
 
-color:white;
+padding:15px 34px;
 
-font-size:1rem;
+border-radius:999px;
 
-backdrop-filter:blur(8px);
+border:1px solid rgba(255,235,190,0.15);
+
+background:
+rgba(255,255,255,0.04);
+
+backdrop-filter:blur(10px);
+
+color:#f5e7ca;
+
+font-size:0.95rem;
+
+letter-spacing:0.5px;
 
 cursor:pointer;
 
 transition:0.4s;
+
+z-index:2;
+
 }
 
 .music-btn:hover{
-transform:scale(1.05);
-background:rgba(255,255,255,0.18);
+
+transform:translateY(-3px);
+
+background:
+rgba(255,255,255,0.08);
+
 }
 
+/* SCROLL NOTE */
+
+.scroll-note{
+
+position:absolute;
+
+bottom:35px;
+
+font-size:0.85rem;
+
+letter-spacing:3px;
+
+text-transform:uppercase;
+
+color:rgba(255,240,210,0.5);
+
+z-index:2;
+
+animation:fadePulse 2s ease-in-out infinite;
+
+}
+
+@keyframes fadePulse{
+
+0%,100%{
+opacity:0.4;
+}
+
+50%{
+opacity:1;
+}
+
+}
 /* GENERAL */
 
 section{
@@ -447,18 +573,30 @@ padding:25px;
 
 <section class="hero">
 
-<div class="seal">
+<div class="hero-overlay"></div>
+
+<div class="monogram-wrap">
+
+<div class="monogram">
 RA
 </div>
 
+<div class="monogram-line"></div>
+
+</div>
+
 <div class="poetic-line">
-“In the most unexpected moment,<br>
-we found home in each other.”
+In the most unexpected moment,<br>
+we found home in each other.
 </div>
 
 <button class="music-btn" onclick="toggleMusic()">
 Play Our Song ✨
 </button>
+
+<div class="scroll-note">
+scroll to unfold
+</div>
 
 </section>
 
