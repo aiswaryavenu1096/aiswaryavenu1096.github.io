@@ -6,7 +6,8 @@
 
 <title>Aiswarya & Rakesh</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
@@ -21,152 +22,384 @@ scroll-behavior:smooth;
 }
 
 body{
-font-family:'Montserrat',sans-serif;
-background:#f7f2eb;
-color:#2d2d2d;
+background:#f6f1ea;
+font-family:'Manrope',sans-serif;
 overflow-x:hidden;
+color:#2e2b28;
 }
 
-section{
-padding:100px 10%;
-text-align:center;
+/* SILK GRAIN */
+
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background-image:url('https://www.transparenttextures.com/patterns/cream-paper.png');
+opacity:0.25;
+pointer-events:none;
+z-index:9999;
 }
+
+/* HERO */
 
 .hero{
 height:100vh;
-background:
-linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),
-url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600');
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
-
+position:relative;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-
-color:white;
-}
-
-.hero h1{
-font-family:'Cormorant Garamond',serif;
-font-size:5rem;
-letter-spacing:2px;
-}
-
-.hero p{
-margin-top:15px;
-font-size:1.2rem;
-}
-
-.countdown{
-margin-top:30px;
-font-size:1.5rem;
-}
-
-.button{
-margin-top:30px;
-padding:14px 28px;
-border:none;
-background:#c8a96a;
-color:white;
-font-size:1rem;
-border-radius:40px;
-cursor:pointer;
-transition:0.3s;
-}
-
-.button:hover{
-transform:scale(1.05);
-}
-
-.story{
-background:white;
-}
-
-.story h2,
-.events h2,
-.gallery h2,
-.rsvp h2,
-.venue h2{
-font-family:'Cormorant Garamond',serif;
-font-size:3rem;
-margin-bottom:20px;
-color:#9b7b45;
-}
-
-.parallax{
-height:60vh;
+text-align:center;
+overflow:hidden;
 
 background:
-linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),
-url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600');
+linear-gradient(rgba(15,15,15,0.45),rgba(15,15,15,0.45)),
+url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1600');
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+width:120%;
+height:120%;
+background:
+radial-gradient(circle at center, rgba(255,215,150,0.12), transparent 60%);
+animation:glow 8s ease-in-out infinite alternate;
+}
+
+@keyframes glow{
+from{
+transform:scale(1);
+opacity:0.4;
+}
+to{
+transform:scale(1.15);
+opacity:0.8;
+}
+}
+
+/* SEAL */
+
+.seal{
+width:140px;
+height:140px;
+border:1px solid rgba(255,255,255,0.5);
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-family:'Cormorant Garamond',serif;
+font-size:3rem;
+letter-spacing:6px;
+
+color:#f7e7c1;
+
+backdrop-filter:blur(4px);
+
+animation:float 5s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0px);}
+}
+
+.poetic-line{
+margin-top:40px;
+max-width:700px;
+
+font-family:'Cormorant Garamond',serif;
+font-size:2rem;
+line-height:1.5;
+
+color:#f4eee5;
+
+padding:0 20px;
+
+animation:fadeIn 2s ease forwards;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.music-btn{
+margin-top:35px;
+padding:14px 30px;
+border:none;
+border-radius:40px;
+
+background:rgba(255,255,255,0.12);
+
+color:white;
+
+font-size:1rem;
+
+backdrop-filter:blur(8px);
+
+cursor:pointer;
+
+transition:0.4s;
+}
+
+.music-btn:hover{
+transform:scale(1.05);
+background:rgba(255,255,255,0.18);
+}
+
+/* GENERAL */
+
+section{
+padding:110px 10%;
+position:relative;
+}
+
+.section-title{
+font-family:'Cormorant Garamond',serif;
+font-size:3.3rem;
+color:#8d6b3f;
+margin-bottom:30px;
+text-align:center;
+}
+
+/* INVITE */
+
+.invite{
+background:#faf7f2;
+text-align:center;
+}
+
+.ganapathy{
+font-size:4rem;
+margin-bottom:30px;
+opacity:0.8;
+}
+
+.invite-text{
+max-width:900px;
+margin:auto;
+font-size:1.15rem;
+line-height:2;
+}
+
+.names{
+font-family:'Cormorant Garamond',serif;
+font-size:4rem;
+margin:40px 0;
+line-height:1.2;
+color:#3f372f;
+}
+
+.highlight{
+color:#9f7a47;
+}
+
+/* DATE CARD */
+
+.date-card{
+margin-top:50px;
+padding:50px;
+
+background:white;
+
+border-radius:30px;
+
+box-shadow:0 10px 40px rgba(0,0,0,0.06);
+
+max-width:700px;
+
+margin-inline:auto;
+}
+
+.date-main{
+font-family:'Cormorant Garamond',serif;
+font-size:3rem;
+margin-bottom:10px;
+}
+
+.muhurtham{
+margin-top:25px;
+font-size:1.1rem;
+line-height:2;
+}
+
+/* COUNTDOWN */
+
+.countdown-section{
+background:
+linear-gradient(rgba(30,30,30,0.5),rgba(30,30,30,0.5)),
+url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1600');
 
 background-size:cover;
 background-position:center;
 background-attachment:fixed;
 
+color:white;
+text-align:center;
+}
+
+.countdown-box{
 display:flex;
 justify-content:center;
-align-items:center;
+gap:30px;
+flex-wrap:wrap;
+margin-top:50px;
+}
 
-color:white;
+.time{
+background:rgba(255,255,255,0.1);
+padding:35px;
+border-radius:25px;
+backdrop-filter:blur(6px);
+min-width:140px;
+}
+
+.time h3{
 font-size:3rem;
 font-family:'Cormorant Garamond',serif;
 }
 
+/* STORY */
+
+.story{
+text-align:center;
+background:#f8f4ef;
+}
+
+.story p{
+max-width:800px;
+margin:auto;
+font-size:1.15rem;
+line-height:2;
+}
+
+/* GALLERY */
+
 .gallery-grid{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
-margin-top:40px;
-}
-
-.gallery-grid img{
-width:300px;
-height:400px;
-object-fit:cover;
-border-radius:20px;
-transition:0.4s;
-}
-
-.gallery-grid img:hover{
-transform:translateY(-10px);
-}
-
-iframe{
-border-radius:20px;
-margin-top:30px;
-}
-
-footer{
-padding:50px;
-background:#1f1f1f;
-color:white;
-text-align:center;
-}
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:3rem;
-}
-
-.parallax{
-font-size:2rem;
-padding:20px;
-text-align:center;
+margin-top:50px;
 }
 
 .gallery-grid img{
 width:100%;
-height:auto;
+height:380px;
+object-fit:cover;
+border-radius:24px;
+
+transition:0.5s;
 }
 
-section{
-padding:80px 7%;
+.gallery-grid img:hover{
+transform:translateY(-8px);
+}
+
+/* VENUE */
+
+.venue-card{
+background:white;
+padding:40px;
+border-radius:30px;
+box-shadow:0 10px 40px rgba(0,0,0,0.06);
+max-width:900px;
+margin:auto;
+text-align:center;
+}
+
+iframe{
+margin-top:30px;
+border-radius:20px;
+}
+
+/* RSVP */
+
+.rsvp{
+background:#f4eee7;
+text-align:center;
+}
+
+.rsvp-form{
+max-width:700px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:20px;
+margin-top:40px;
+}
+
+input,select{
+padding:18px;
+border-radius:16px;
+border:none;
+font-size:1rem;
+background:white;
+}
+
+.submit-btn{
+padding:18px;
+border:none;
+border-radius:16px;
+background:#9f7a47;
+color:white;
+font-size:1rem;
+cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+padding:70px 20px;
+text-align:center;
+background:#1e1b18;
+color:#ddd;
+line-height:2;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero{
+background-attachment:scroll;
+}
+
+.names{
+font-size:2.8rem;
+}
+
+.section-title{
+font-size:2.4rem;
+}
+
+.poetic-line{
+font-size:1.5rem;
+}
+
+.date-main{
+font-size:2rem;
+}
+
+.countdown-box{
+gap:15px;
+}
+
+.time{
+min-width:120px;
+padding:25px;
 }
 
 }
@@ -176,121 +409,255 @@ padding:80px 7%;
 
 <body>
 
+<!-- HERO -->
+
 <section class="hero">
 
-<h1>Aiswarya & Rakesh</h1>
+<div class="seal">
+RA
+</div>
 
-<p>Found each other. Forever begins now.</p>
+<div class="poetic-line">
+“In the most unexpected moment,<br>
+we found home in each other.”
+</div>
 
-<div class="countdown" id="countdown"></div>
-
-<button class="button" onclick="playMusic()">
-Play Our Song 🎶
+<button class="music-btn" onclick="toggleMusic()">
+Play Our Song ✨
 </button>
 
 </section>
 
-<section class="story">
+<!-- INVITE -->
 
-<h2>Our Story</h2>
+<section class="invite">
 
-<p>
-What started unexpectedly became the most beautiful part of our lives.
-Now, surrounded by love, laughter, family, and endless memories —
-we invite you to celebrate our forever.
-</p>
+<div class="ganapathy">
+🪔
+</div>
 
-</section>
+<h2 class="section-title">
+Wedding Invitation
+</h2>
 
-<section class="parallax">
-Save The Date • August 31 2026
-</section>
+<div class="invite-text">
 
-<section class="events">
+Together with their families,<br><br>
 
-<h2>Wedding Celebrations</h2>
+we invite you to celebrate the wedding of
 
-<p>
-Engagement • Haldi • Wedding Ceremony • Reception
-</p>
+<div class="names">
 
-</section>
+Rakesh Kumar Peethambaran<br>
+<span class="highlight">&</span><br>
+Aiswarya Venu
 
-<section class="gallery">
+</div>
 
-<h2>Moments</h2>
+Son of Peethambaran & Family<br><br>
 
-<div class="gallery-grid">
+Daughter of Venukumar B & Geetha Venu<br>
+Manacaud, Thiruvananthapuram
 
-<img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1000">
+</div>
 
-<img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1000">
+<div class="date-card">
 
-<img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1000">
+<div class="date-main">
+31 August 2026
+</div>
+
+15 Chingam 1202
+
+<div class="muhurtham">
+
+Groom Reception • 11:00 AM<br>
+Muhurtham • 12:20 PM – 12:55 PM
+
+</div>
 
 </div>
 
 </section>
 
-<section class="venue">
+<!-- COUNTDOWN -->
 
-<h2>Venue</h2>
+<section class="countdown-section">
 
-<p>Thiruvananthapuram, Kerala</p>
+<h2 class="section-title" style="color:white;">
+Counting Down To Forever
+</h2>
+
+<div class="countdown-box">
+
+<div class="time">
+<h3 id="days">0</h3>
+<p>Days</p>
+</div>
+
+<div class="time">
+<h3 id="hours">0</h3>
+<p>Hours</p>
+</div>
+
+<div class="time">
+<h3 id="minutes">0</h3>
+<p>Minutes</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- STORY -->
+
+<section class="story">
+
+<h2 class="section-title">
+Our Story
+</h2>
+
+<p>
+What began unexpectedly slowly became the most beautiful part of our lives.
+Through laughter, distance, chaos, comfort, and countless memories —
+we found a home in each other.
+</p>
+
+</section>
+
+<!-- GALLERY -->
+
+<section>
+
+<h2 class="section-title">
+Moments We Hold Close
+</h2>
+
+<div class="gallery-grid">
+
+<img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200">
+
+<img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1200">
+
+<img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200">
+
+</div>
+
+</section>
+
+<!-- VENUE -->
+
+<section>
+
+<h2 class="section-title">
+Venue
+</h2>
+
+<div class="venue-card">
+
+<h3>
+Mount Carmel Convention Center
+</h3>
+
+<p style="margin-top:10px;">
+Cotton Hill, Vazhuthacaud, Thiruvananthapuram
+</p>
 
 <iframe
-src="https://www.google.com/maps?q=Thiruvananthapuram&output=embed"
+src="https://www.google.com/maps?q=Mount+Carmel+Convention+Center+Vazhuthacaud+Trivandrum&output=embed"
 width="100%"
-height="400"
+height="350"
+style="border:0;"
 allowfullscreen=""
 loading="lazy">
 </iframe>
 
+</div>
+
 </section>
+
+<!-- RSVP -->
 
 <section class="rsvp">
 
-<h2>RSVP</h2>
+<h2 class="section-title">
+RSVP
+</h2>
 
-<p>
-RSVP link coming soon 💛
-</p>
+<form class="rsvp-form">
+
+<input type="text" placeholder="Your Name">
+
+<select>
+<option>Will you attend?</option>
+<option>Joyfully Accepts</option>
+<option>Regretfully Declines</option>
+</select>
+
+<select>
+<option>Number of Guests</option>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+</select>
+
+<button class="submit-btn">
+Send RSVP
+</button>
+
+</form>
 
 </section>
 
 <footer>
 
-Made with love • Aiswarya & Rakesh
+With love,<br>
+Aiswarya & Rakesh ✨
 
 </footer>
 
-<audio id="music">
+<audio id="bgMusic" loop>
 
-<source src="YOUR-SONG-LINK.mp3" type="audio/mpeg">
+<source src="YOUR-MUSIC-LINK.mp3" type="audio/mpeg">
 
 </audio>
 
 <script>
 
-var countDownDate = new Date("Aug 31, 2026 09:00:00").getTime();
+function toggleMusic(){
 
-var x = setInterval(function() {
+const music = document.getElementById("bgMusic");
 
-var now = new Date().getTime();
+if(music.paused){
+music.play();
+}else{
+music.pause();
+}
 
-var distance = countDownDate - now;
+}
 
-var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+/* COUNTDOWN */
 
-document.getElementById("countdown").innerHTML =
-days + " Days • " + hours + " Hours";
+const weddingDate = new Date("August 31, 2026 12:20:00").getTime();
+
+setInterval(function(){
+
+const now = new Date().getTime();
+
+const distance = weddingDate - now;
+
+const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+document.getElementById("days").innerHTML = days;
+document.getElementById("hours").innerHTML = hours;
+document.getElementById("minutes").innerHTML = minutes;
 
 },1000);
-
-function playMusic(){
-document.getElementById("music").play();
-}
 
 </script>
 
