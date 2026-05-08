@@ -112,13 +112,14 @@ transform:translateY(25px);
 /* CONTENT */
 
 .hero-content{
-position:relative;
-z-index:3;
+position:absolute;
+bottom:88px;
+left:50%;
+transform:translateX(-50%);
+z-index:4;
 display:flex;
 flex-direction:column;
 align-items:center;
-padding-bottom:118px;
-transform:translateY(0);
 }
 /* MONOGRAM */
 
@@ -189,16 +190,21 @@ display:none;
 
 /* POETIC LINE */
 .poetic-line{
+position:absolute;
+top:8.5vh;
+left:50%;
+transform:translateX(-50%);
+width:86%;
+max-width:420px;
 font-family:'Cormorant Garamond',serif;
-font-size:1.08rem;
+font-size:1rem;
 font-weight:400;
-line-height:1.55;
-letter-spacing:0.7px;
+line-height:1.45;
+letter-spacing:0.8px;
 text-align:center;
 color:#efd08a;
 text-shadow:0 0 14px rgba(0,0,0,0.9);
-padding:0 28px;
-margin-bottom:10px;
+z-index:4;
 opacity:0;
 animation:fadeReveal 2s ease forwards;
 animation-delay:0.5s;
@@ -247,7 +253,7 @@ rgba(255,255,255,0.07);
 
 .scroll-note{
 position:absolute;
-bottom:44px;
+bottom:24px;
 left:50%;
 transform:translateX(-50%);
 font-size:0.6rem;
@@ -255,16 +261,18 @@ letter-spacing:3.2px;
 text-transform:uppercase;
 color:rgba(242,210,138,0.78);
 animation:pulseFade 2s ease-in-out infinite;
-z-index:3;
+z-index:4;
 white-space:nowrap;
+text-align:center;
+}
 .scroll-arrow{
 display:block;
-font-size:1.6rem;
+font-size:1.5rem;
 line-height:1;
-margin-top:5px;
+margin-top:4px;
 color:#d7a94f;
 text-shadow:0 0 10px rgba(215,169,79,0.5);
-}
+text-align:center;
 }
 @keyframes pulseFade{
 
@@ -556,19 +564,15 @@ padding:25px;
 <div class="hero-texture"></div>
 <div class="hero-glow"></div>
 
-<div class="hero-content">
-
-<div class="hero-divider"></div>
-
 <p class="poetic-line">
 In the most unexpected moment,<br>
 we found home in each other.
 </p>
 
+<div class="hero-content">
 <button class="music-btn" onclick="toggleMusic()">
 Play Our Song
 </button>
-
 </div>
 
 <div class="scroll-note">
