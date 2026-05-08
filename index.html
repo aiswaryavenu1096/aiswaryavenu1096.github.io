@@ -52,16 +52,37 @@ align-items:flex-end;
 overflow:hidden;
 
 background:
-radial-gradient(circle at 18% 18%, rgba(255,127,210,0.20), transparent 32%),
-radial-gradient(circle at 85% 22%, rgba(98,139,0,0.10), transparent 30%),
-linear-gradient(rgba(254,230,246,0.06), rgba(115,0,75,0.24)),
+radial-gradient(circle at top left,
+rgba(255,210,230,0.30),
+transparent 34%),
+
+radial-gradient(circle at top right,
+rgba(255,170,210,0.16),
+transparent 28%),
+
+radial-gradient(circle at bottom right,
+rgba(98,139,0,0.12),
+transparent 24%),
+
+linear-gradient(
+rgba(255,245,248,0.06),
+rgba(115,0,75,0.14)
+),
+
 url('hero-final.png');
 
 background-size:cover;
 background-position:center center;
 background-repeat:no-repeat;
-background-color:#73004B;
-background-blend-mode:soft-light,soft-light,screen,normal;
+
+background-color:#8b2c62;
+
+background-blend-mode:
+screen,
+soft-light,
+soft-light,
+lighten,
+normal;
 }
 
 /* TEXTURE */
