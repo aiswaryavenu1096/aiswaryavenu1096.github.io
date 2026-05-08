@@ -117,8 +117,8 @@ z-index:3;
 display:flex;
 flex-direction:column;
 align-items:center;
-padding-bottom:70px;
-transform:translateY(25px);
+padding-bottom:118px;
+transform:translateY(0);
 }
 /* MONOGRAM */
 
@@ -190,20 +190,19 @@ display:none;
 /* POETIC LINE */
 .poetic-line{
 font-family:'Cormorant Garamond',serif;
-font-size:1.45rem;
+font-size:1.08rem;
 font-weight:400;
-line-height:1.45;
-letter-spacing:0.35px;
+line-height:1.55;
+letter-spacing:0.7px;
 text-align:center;
-color:#f0d391;
-text-shadow:0 0 12px rgba(0,0,0,0.85);
-padding:0 24px;
-margin-bottom:12px;
+color:#efd08a;
+text-shadow:0 0 14px rgba(0,0,0,0.9);
+padding:0 28px;
+margin-bottom:10px;
 opacity:0;
 animation:fadeReveal 2s ease forwards;
 animation-delay:0.5s;
 }
-
 @keyframes fadeReveal{
 
 from{
@@ -248,16 +247,24 @@ rgba(255,255,255,0.07);
 
 .scroll-note{
 position:absolute;
-bottom:22px;
+bottom:44px;
 left:50%;
 transform:translateX(-50%);
-font-size:0.62rem;
-letter-spacing:3px;
+font-size:0.6rem;
+letter-spacing:3.2px;
 text-transform:uppercase;
-color:rgba(242,210,138,0.72);
+color:rgba(242,210,138,0.78);
 animation:pulseFade 2s ease-in-out infinite;
 z-index:3;
 white-space:nowrap;
+.scroll-arrow{
+display:block;
+font-size:1.6rem;
+line-height:1;
+margin-top:5px;
+color:#d7a94f;
+text-shadow:0 0 10px rgba(215,169,79,0.5);
+}
 }
 @keyframes pulseFade{
 
@@ -566,6 +573,7 @@ Play Our Song
 
 <div class="scroll-note">
 Scroll to unfold
+<span class="scroll-arrow">⌄</span>
 </div>
 
 </section>
