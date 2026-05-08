@@ -366,62 +366,118 @@ text-align:center;
 /* INVITE */
 
 .invite{
-background:#faf7f2;
-text-align:center;
+padding:90px 20px;
+background:
+radial-gradient(circle at top left, rgba(255,127,210,0.22), transparent 32%),
+radial-gradient(circle at bottom right, rgba(98,139,0,0.12), transparent 28%),
+linear-gradient(135deg,#fee6f6 0%,#fff7fb 45%,#f8d8ec 100%);
 }
 
-.ganapathy{
-font-size:4rem;
-margin-bottom:30px;
-opacity:0.8;
-}
-
-.invite-text{
-max-width:900px;
+.invite-card{
+max-width:820px;
 margin:auto;
+padding:55px 28px;
+text-align:center;
+border-radius:34px;
+background:rgba(255,255,255,0.62);
+border:1px solid rgba(115,0,75,0.12);
+box-shadow:0 25px 70px rgba(115,0,75,0.16);
+position:relative;
+overflow:hidden;
+}
+
+.invite-card::before{
+content:"";
+position:absolute;
+inset:18px;
+border:1px solid rgba(180,125,45,0.28);
+border-radius:26px;
+pointer-events:none;
+}
+
+.auspicious-mark{
+font-family:'Cormorant Garamond',serif;
+font-size:2.6rem;
+color:#73004B;
+margin-bottom:14px;
+}
+
+.invite-kicker{
+font-family:'Cinzel',serif;
+font-size:0.72rem;
+letter-spacing:2.5px;
+text-transform:uppercase;
+color:#628B00;
+margin-bottom:14px;
+}
+
+.invite-title{
+font-family:'Cormorant Garamond',serif;
+font-size:2.8rem;
+font-weight:500;
+color:#73004B;
+margin-bottom:18px;
+}
+
+.invite-line{
+font-family:'Cormorant Garamond',serif;
 font-size:1.15rem;
-line-height:2;
+color:#5a3148;
+margin-bottom:28px;
 }
 
-.names{
+.couple-names{
 font-family:'Cormorant Garamond',serif;
-font-size:4rem;
-margin:40px 0;
-line-height:1.2;
-color:#3f372f;
+font-size:2.35rem;
+line-height:1.15;
+color:#73004B;
+display:flex;
+flex-direction:column;
+gap:8px;
+margin:28px 0;
 }
 
-.highlight{
-color:#9f7a47;
+.couple-names small{
+font-family:'Imperial Script',cursive;
+font-size:2rem;
+color:#b47d2d;
 }
 
-/* DATE CARD */
-
-.date-card{
-margin-top:50px;
-padding:50px;
-
-background:white;
-
-border-radius:30px;
-
-box-shadow:0 10px 40px rgba(0,0,0,0.06);
-
-max-width:700px;
-
-margin-inline:auto;
+.parents{
+font-size:0.95rem;
+line-height:1.8;
+color:#5b3a4e;
+margin-top:24px;
 }
 
-.date-main{
+.date-pill{
+display:inline-block;
+margin-top:34px;
+padding:12px 24px;
+border-radius:999px;
+background:#73004B;
+color:#fee6f6;
+font-family:'Cinzel',serif;
+font-size:0.8rem;
+letter-spacing:1.4px;
+}
+
+.malayalam-date{
+margin-top:13px;
 font-family:'Cormorant Garamond',serif;
-font-size:3rem;
-margin-bottom:10px;
-}
-
-.muhurtham{
-margin-top:25px;
 font-size:1.1rem;
-line-height:2;
+color:#628B00;
+}
+
+.time-details{
+margin-top:28px;
+font-size:1rem;
+line-height:1.9;
+color:#4b263d;
+}
+
+.time-details strong{
+color:#73004B;
 }
 
 /* COUNTDOWN */
@@ -626,54 +682,43 @@ Scroll to unfold
 
 <section class="invite">
 
-<div class="ganapathy">
-🪔
+<div class="invite-card">
+
+<div class="auspicious-mark">ஓം</div>
+
+<p class="invite-kicker">With the blessings of family and love</p>
+
+<h2 class="invite-title">Wedding Invitation</h2>
+
+<p class="invite-line">
+We joyfully invite you to celebrate the wedding of
+</p>
+
+<div class="couple-names">
+<span>Rakesh Kumar Peethambaran</span>
+<small>and</small>
+<span>Aiswarya Venu</span>
 </div>
 
-<h2 class="section-title">
-Wedding Invitation
-</h2>
-
-<div class="invite-text">
-
-Together with their families,<br><br>
-
-we invite you to celebrate the wedding of
-
-<div class="names">
-
-Rakesh Kumar Peethambaran<br>
-<span class="highlight">&</span><br>
-Aiswarya Venu
-
+<div class="parents">
+<p>Son of K. Peethambaran (Late) & Usha Peethamber</p>
+<p>Daughter of Venukumar B & Geetha Venu</p>
 </div>
 
-Son of Peethambaran & Family<br><br>
-
-Daughter of Venukumar B & Geetha Venu<br>
-Manacaud, Thiruvananthapuram
-
+<div class="date-pill">
+Monday, 31 August 2026
 </div>
 
-<div class="date-card">
+<p class="malayalam-date">15 Chingam 1202</p>
 
-<div class="date-main">
-31 August 2026
-</div>
-
-15 Chingam 1202
-
-<div class="muhurtham">
-
-Groom Reception • 11:00 AM<br>
-Muhurtham • 12:20 PM – 12:55 PM
-
+<div class="time-details">
+<p><strong>Groom Reception</strong> • 11:00 AM</p>
+<p><strong>Muhurtham</strong> • 12:20 PM – 12:55 PM</p>
 </div>
 
 </div>
 
 </section>
-
 <!-- COUNTDOWN -->
 
 <section class="countdown-section">
