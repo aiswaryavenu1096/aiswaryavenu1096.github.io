@@ -41,7 +41,7 @@ z-index:9999;
 }
 
 /* HERO */
-/* HERO */
+/* HERO SECTION */
 
 .hero{
 
@@ -50,114 +50,83 @@ height:100vh;
 position:relative;
 
 display:flex;
-flex-direction:column;
 justify-content:center;
 align-items:center;
 
 overflow:hidden;
 
 background:
-radial-gradient(circle at top,
-rgba(212,175,55,0.08),
-transparent 30%),
+radial-gradient(circle at top left,
+rgba(118,52,92,0.22),
+transparent 32%),
+
+radial-gradient(circle at bottom right,
+rgba(212,175,55,0.10),
+transparent 28%),
 
 linear-gradient(
 135deg,
-#070506 0%,
-#14080f 30%,
-#24101d 55%,
-#0c0910 100%
+#050406 0%,
+#120813 38%,
+#1b1017 72%,
+#09070a 100%
 );
 
 }
 
-/* RICH TEXTURE */
+/* TEXTURE */
 
-.hero::before{
-
-content:"";
+.hero-texture{
 
 position:absolute;
 inset:0;
 
-background:
-url('https://www.transparenttextures.com/patterns/black-paper.png');
+background-image:
+url('https://www.transparenttextures.com/patterns/dark-embroidery.png');
 
-opacity:0.3;
+opacity:0.18;
 
 pointer-events:none;
 
 }
 
-/* GOLD PAINT EFFECTS */
+/* GOLD GLOW */
 
-.hero::after{
-
-content:"";
-
-position:absolute;
-inset:0;
-
-background:
-radial-gradient(circle at top left,
-rgba(212,175,55,0.18),
-transparent 22%),
-
-radial-gradient(circle at bottom right,
-rgba(212,175,55,0.12),
-transparent 24%),
-
-radial-gradient(circle at top right,
-rgba(130,40,90,0.22),
-transparent 26%),
-
-radial-gradient(circle at bottom left,
-rgba(100,30,70,0.18),
-transparent 24%);
-
-mix-blend-mode:screen;
-
-pointer-events:none;
-
-}
-
-/* GLOW */
-
-.hero-overlay{
+.hero-glow{
 
 position:absolute;
 
-width:900px;
-height:900px;
+width:850px;
+height:850px;
 
 border-radius:50%;
 
 background:
 radial-gradient(circle,
-rgba(212,175,55,0.12),
+rgba(212,175,55,0.10),
 transparent 70%);
 
-filter:blur(40px);
+filter:blur(20px);
 
-animation:floatGlow 8s ease-in-out infinite alternate;
+animation:glowFloat 8s ease-in-out infinite alternate;
 
 }
 
-@keyframes floatGlow{
+@keyframes glowFloat{
 
 from{
-transform:translateY(-20px);
+transform:translateY(-10px);
 }
 
 to{
-transform:translateY(20px);
+transform:translateY(25px);
 }
 
 }
 
-/* MONOGRAM */
+/* CONTENT */
 
-.monogram-wrap{
+.hero-content{
 
 position:relative;
 
@@ -169,79 +138,69 @@ align-items:center;
 
 }
 
+/* MONOGRAM */
+
 .monogram{
 
-font-family:'Lucida Calligraphy', cursive;
+display:flex;
+flex-direction:column;
+align-items:center;
 
-font-size:11rem;
+font-family:'Great Vibes',cursive;
 
-line-height:0.8;
-
-font-weight:normal;
+line-height:0.75;
 
 background:
 linear-gradient(
 180deg,
-#fff0c9 0%,
-#d4af37 40%,
-#f7df9a 100%
+#fff0c7 0%,
+#d6a24d 40%,
+#fff0c2 65%,
+#9d6a25 100%
 );
 
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 
-text-shadow:
-0 0 30px rgba(212,175,55,0.28);
-
-position:relative;
-
-animation:monogramFloat 5s ease-in-out infinite;
+filter:
+drop-shadow(0 0 10px rgba(255,210,120,0.16));
 
 }
 
-/* SPLIT LETTER LOOK */
+.r-letter{
 
-.monogram::first-letter{
+font-size:11rem;
 
-margin-right:20px;
-
-}
-
-@keyframes monogramFloat{
-
-0%{
-transform:translateY(0px);
-}
-
-50%{
-transform:translateY(-8px);
-}
-
-100%{
-transform:translateY(0px);
-}
+margin-right:90px;
 
 }
 
-/* GOLD DIVIDER */
+.a-letter{
 
-.monogram-line{
+font-size:10rem;
+
+margin-top:-42px;
+
+margin-left:90px;
+
+}
+
+/* DIVIDER */
+
+.hero-divider{
+
+width:120px;
+height:1px;
 
 margin-top:25px;
-
-width:180px;
-height:1px;
 
 background:
 linear-gradient(
 to right,
 transparent,
-rgba(255,220,150,0.85),
+rgba(255,225,160,0.85),
 transparent
 );
-
-box-shadow:
-0 0 12px rgba(212,175,55,0.3);
 
 }
 
@@ -249,43 +208,36 @@ box-shadow:
 
 .poetic-line{
 
-margin-top:55px;
+margin-top:38px;
 
 font-family:'Cormorant Garamond',serif;
 
-font-size:2rem;
-
-font-style:italic;
+font-size:1.8rem;
 
 font-weight:300;
 
 line-height:1.8;
 
-letter-spacing:0.5px;
+letter-spacing:0.3px;
 
 text-align:center;
 
-color:#f3e7d0;
-
-z-index:3;
+color:#efe4d1;
 
 opacity:0;
 
-animation:poeticReveal 2.2s ease forwards;
-animation-delay:0.6s;
+animation:fadeReveal 2s ease forwards;
+animation-delay:0.5s;
 
 padding:0 20px;
 
-text-shadow:
-0 0 20px rgba(255,230,180,0.08);
-
 }
 
-@keyframes poeticReveal{
+@keyframes fadeReveal{
 
 from{
 opacity:0;
-transform:translateY(20px);
+transform:translateY(18px);
 }
 
 to{
@@ -295,39 +247,32 @@ transform:translateY(0);
 
 }
 
-/* BUTTON */
+/* MUSIC BUTTON */
 
 .music-btn{
 
-margin-top:45px;
+margin-top:34px;
 
-padding:18px 44px;
+padding:14px 30px;
 
 border-radius:999px;
 
-border:1px solid rgba(255,215,140,0.25);
+border:1px solid rgba(255,230,180,0.16);
 
 background:
-rgba(255,255,255,0.03);
+rgba(255,255,255,0.04);
 
 backdrop-filter:blur(10px);
 
-color:#f7dfb0;
+color:#f3e4c4;
 
-font-size:0.95rem;
+font-size:0.92rem;
 
-letter-spacing:3px;
-
-text-transform:uppercase;
+letter-spacing:1px;
 
 cursor:pointer;
 
 transition:0.4s;
-
-z-index:3;
-
-box-shadow:
-0 0 20px rgba(212,175,55,0.08);
 
 }
 
@@ -336,39 +281,40 @@ box-shadow:
 transform:translateY(-3px);
 
 background:
-rgba(255,255,255,0.06);
-
-box-shadow:
-0 0 30px rgba(212,175,55,0.15);
+rgba(255,255,255,0.07);
 
 }
 
-/* SCROLL */
+/* SCROLL NOTE */
 
 .scroll-note{
 
 position:absolute;
 
-bottom:38px;
+bottom:32px;
 
-font-size:0.8rem;
+left:50%;
 
-letter-spacing:5px;
+transform:translateX(-50%);
+
+font-size:0.72rem;
+
+letter-spacing:4px;
 
 text-transform:uppercase;
 
-color:rgba(255,225,180,0.55);
+color:rgba(255,235,205,0.45);
+
+animation:pulseFade 2s ease-in-out infinite;
 
 z-index:3;
 
-animation:fadePulse 2s ease-in-out infinite;
-
 }
 
-@keyframes fadePulse{
+@keyframes pulseFade{
 
 0%,100%{
-opacity:0.4;
+opacity:0.35;
 }
 
 50%{
@@ -381,18 +327,21 @@ opacity:1;
 
 @media(max-width:768px){
 
-.monogram{
+.r-letter{
 font-size:7rem;
+margin-right:50px;
+}
+
+.a-letter{
+font-size:6.5rem;
+margin-left:55px;
+margin-top:-25px;
 }
 
 .poetic-line{
-font-size:1.4rem;
+font-size:1.3rem;
 line-height:1.7;
-}
-
-.music-btn{
-padding:16px 30px;
-font-size:0.8rem;
+padding:0 30px;
 }
 
 }
@@ -649,29 +598,33 @@ padding:25px;
 
 <section class="hero">
 
-<div class="hero-overlay"></div>
+<div class="hero-texture"></div>
+<div class="hero-glow"></div>
 
-<div class="monogram-wrap">
+<div class="hero-content">
 
 <div class="monogram">
-RA
+
+<span class="r-letter">R</span>
+<span class="a-letter">A</span>
+
 </div>
 
-<div class="monogram-line"></div>
+<div class="hero-divider"></div>
 
-</div>
-
-<div class="poetic-line">
+<p class="poetic-line">
 In the most unexpected moment,<br>
 we found home in each other.
-</div>
+</p>
 
 <button class="music-btn" onclick="toggleMusic()">
-Play Our Song ✨
+Play Our Song
 </button>
 
+</div>
+
 <div class="scroll-note">
-scroll to unfold
+Scroll to unfold
 </div>
 
 </section>
