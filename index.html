@@ -1161,30 +1161,19 @@ animation:inviteBreath 9s ease-in-out infinite 1.5s;
   /* RECEPTION VENUE */
 
 .reception-venue-section{
-
 position:relative;
-
-min-height:82vh;
-
+min-height:85vh;
 display:flex;
-
 justify-content:center;
-
 align-items:center;
-
 padding:80px 20px;
-
 overflow:hidden;
-
 background:
-linear-gradient(rgba(14,8,16,0.72),rgba(14,8,16,0.78)),
+linear-gradient(rgba(18,8,16,0.70),rgba(18,8,16,0.82)),
 url('hero-final.png');
-
 background-size:cover;
 background-position:center;
-
 }
-
 .reception-venue-section::before{
 
 content:"";
@@ -1202,58 +1191,50 @@ animation:venueGlow 7s ease-in-out infinite alternate;
 }
 
 .reception-venue-card{
-
 position:relative;
-
 z-index:2;
-
 text-align:center;
-
 max-width:680px;
-
 width:100%;
-
-padding:70px 36px;
-
-border-radius:40px;
-
-background:rgba(16,8,18,0.48);
-
-backdrop-filter:blur(10px);
-
-border:1px solid rgba(212,175,55,0.28);
-
-box-shadow:
-0 25px 70px rgba(0,0,0,0.35);
-
+padding:64px 34px;
+border-radius:38px;
+background:rgba(18,8,16,0.72);
+backdrop-filter:blur(12px);
+border:1px solid rgba(212,175,55,0.38);
+box-shadow:0 25px 80px rgba(0,0,0,0.45);
 opacity:0;
-
 transform:translateY(40px);
-
-transition:
-opacity 1.5s ease,
-transform 1.5s ease;
-
+transition:opacity 1.5s ease, transform 1.5s ease;
 }
 
 .reception-venue-card.show{
-
 opacity:1;
-
 transform:translateY(0);
-
 }
 
 @media(max-width:768px){
 
-.reception-venue-card{
-
-padding:55px 24px;
-
-border-radius:30px;
-
+.reception-venue-section{
+min-height:78vh;
+padding:60px 16px;
 }
 
+.reception-venue-card{
+padding:48px 22px;
+border-radius:28px;
+}
+
+.reception-venue-card .venue-title{
+font-size:2.7rem;
+line-height:1.05;
+}
+
+.reception-venue-card .venue-subtitle{
+font-size:1.05rem;
+line-height:1.65;
+}
+
+}
 }
 /* COUNTDOWN */
 
