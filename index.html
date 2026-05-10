@@ -356,7 +356,37 @@ radial-gradient(circle at top left, rgba(115,0,75,0.22), transparent 32%),
 radial-gradient(circle at bottom right, rgba(0,80,50,0.18), transparent 30%),
 linear-gradient(135deg,#1a0c18 0%,#2b1124 42%,#0f1714 100%);
 }
+.lotus{
+position:absolute;
+z-index:1;
+font-size:2.3rem;
+color:rgba(184,135,59,0.22);
+}
 
+.lotus-top-left{
+top:28px;
+left:32px;
+}
+
+.lotus-top-right{
+top:28px;
+right:32px;
+}
+
+.lotus-bottom-left{
+bottom:28px;
+left:32px;
+}
+
+.lotus-bottom-right{
+bottom:28px;
+right:32px;
+}
+
+.lotus-top-right,
+.lotus-bottom-right{
+transform:scaleX(-1);
+}
 .invite-wrap{
 max-width:760px;
 margin:auto;
@@ -452,38 +482,37 @@ margin-bottom:24px;
 
 .invite-names{
 font-family:'Cormorant Garamond',serif;
-font-size:3.6rem;
-font-weight:600;
-line-height:0.95;
 color:#5f1f44;
-margin:22px 0 26px;
+margin:22px 0 30px;
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:18px;
 }
 
-.invite-names small{
+.person-block span{
 display:block;
-font-family:'Imperial Script',cursive;
-font-size:2.5rem;
-font-weight:400;
-line-height:0.8;
-color:#b8873b;
-}
-
-.full-names{
-font-family:'Cormorant Garamond',serif;
-color:#5a2c24;
-line-height:1.5;
-margin-bottom:30px;
-}
-
-.full-names p{
-font-size:1.08rem;
+font-size:2.25rem;
 font-weight:600;
-margin-top:14px;
+line-height:1.05;
 }
 
-.full-names small{
-font-size:0.9rem;
+.person-block small{
+display:block;
+max-width:520px;
+margin:10px auto 0;
+font-size:0.92rem;
 font-style:italic;
+line-height:1.45;
+color:#5a2c24;
+}
+
+.invite-names b{
+font-family:'Imperial Script',cursive;
+font-size:2.4rem;
+font-weight:400;
+line-height:0.7;
+color:#b8873b;
 }
 
 .date-feature{
@@ -526,9 +555,10 @@ color:#8d6a2f;
 .date-center strong{
 display:block;
 font-family:'Cormorant Garamond',serif;
-font-size:4rem;
-line-height:0.9;
+font-size:3.6rem;
+line-height:1;
 color:#73004B;
+margin:6px 0 2px;
 }
 
 .chingam{
@@ -793,6 +823,10 @@ Scroll to unfold
 <section class="invite">
 
 <div class="invite-wrap">
+  <div class="lotus lotus-top-left">✾</div>
+<div class="lotus lotus-top-right">✾</div>
+<div class="lotus lotus-bottom-left">✾</div>
+<div class="lotus lotus-bottom-right">✾</div>
 
 <div class="invite-ornament">✦</div>
 
@@ -805,17 +839,19 @@ We joyfully invite you to celebrate the wedding of
 </p>
 
 <div class="invite-names">
-<span>Rakesh</span>
-<small>&</small>
-<span>Aiswarya</span>
+
+<div class="person-block">
+<span>Rakesh Kumar Peethambaran</span>
+<small>Son of Shri K. Peethambaran (Late) & Smt. Usha Peethamber</small>
 </div>
 
-<div class="full-names">
-<p>Rakesh Kumar Peethambaran</p>
-<small>Son of K. Peethambaran (Late) & Usha Peethamber</small>
+<b>&</b>
 
-<p>Aiswarya Venu</p>
-<small>Daughter of Venukumar B & Geetha Venu</small>
+<div class="person-block">
+<span>Aiswarya Venu</span>
+<small>Daughter of Shri Venukumar B & Smt. Geetha Venu</small>
+</div>
+
 </div>
 
 <div class="date-feature">
@@ -841,10 +877,7 @@ We joyfully invite you to celebrate the wedding of
 <p>Muhurtham <strong>12:20 PM – 12:55 PM</strong></p>
 </div>
 
-<p class="invite-close">
-With love in our hearts and joy in our families,<br>
-we look forward to celebrating this beautiful day with you.
-</p>
+
 
 </div>
 
