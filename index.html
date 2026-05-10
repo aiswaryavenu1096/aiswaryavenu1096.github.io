@@ -434,6 +434,15 @@ opacity:0.9;
 transform:translateX(-50%) scale(1.12);
 }
 }
+  <section class="reception-image-section">
+
+<img
+src="./reception-final.png"
+alt="Reception Celebration"
+class="reception-image"
+/>
+
+</section>
 /* COUNTDOWN */
 
 .countdown-section{
@@ -814,7 +823,33 @@ padding:25px;
 }
 
 }
+.reception-image-section{
+background:#120b11;
+padding:0;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+overflow:hidden;
+}
 
+.reception-image{
+width:100%;
+max-width:820px;
+display:block;
+object-fit:contain;
+position:relative;
+z-index:2;
+opacity:0;
+transform:translateY(40px) scale(0.97);
+transition:opacity 1.5s ease, transform 1.5s ease;
+}
+
+.reception-image.show{
+opacity:1;
+transform:translateY(0) scale(1);
+animation:inviteBreath 9s ease-in-out infinite 1.5s;
+}
 </style>
 </head>
 
@@ -1101,6 +1136,27 @@ venueContent.classList.add('show');
 },{ threshold:0.35 });
 
 venueObserver.observe(venueContent);
+
+</script>
+  <script>
+
+const receptionImage = document.querySelector('.reception-image');
+
+const receptionImageObserver = new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+receptionImage.classList.add('show');
+}
+
+});
+
+},{ threshold:0.35 });
+
+if(receptionImage){
+receptionImageObserver.observe(receptionImage);
+}
 
 </script>
 </body>
