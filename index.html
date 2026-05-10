@@ -942,7 +942,34 @@ src="./reception-final.png"
 alt="Reception Celebration"
 class="reception-image"
 />
+    <section class="reception-venue-section">
 
+<div class="reception-venue-card">
+
+<p class="venue-kicker">
+Reception Venue
+</p>
+
+<h2 class="venue-title">
+Confluence by Hycinth
+</h2>
+
+<p class="venue-subtitle">
+Hycinth Hotels<br>
+Manorama Road, Thampanoor<br>
+Thiruvananthapuram
+</p>
+
+<a
+href="https://maps.google.com/?q=Confluence+by+Hycinth+Thiruvananthapuram"
+target="_blank"
+class="venue-btn">
+
+View on Maps
+
+</a>
+
+</div>
 </section>
 <!-- COUNTDOWN -->
 
@@ -1130,6 +1157,103 @@ opacity:1;
 transform:translateY(0) scale(1);
 animation:inviteBreath 9s ease-in-out infinite 1.5s;
 }
+  /* RECEPTION VENUE */
+
+.reception-venue-section{
+
+position:relative;
+
+min-height:82vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:80px 20px;
+
+overflow:hidden;
+
+background:
+linear-gradient(rgba(14,8,16,0.72),rgba(14,8,16,0.78)),
+url('hero-final.png');
+
+background-size:cover;
+background-position:center;
+
+}
+
+.reception-venue-section::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+radial-gradient(circle at top, rgba(212,175,55,0.12), transparent 35%),
+radial-gradient(circle at bottom, rgba(115,0,75,0.18), transparent 35%);
+
+animation:venueGlow 7s ease-in-out infinite alternate;
+
+}
+
+.reception-venue-card{
+
+position:relative;
+
+z-index:2;
+
+text-align:center;
+
+max-width:680px;
+
+width:100%;
+
+padding:70px 36px;
+
+border-radius:40px;
+
+background:rgba(16,8,18,0.48);
+
+backdrop-filter:blur(10px);
+
+border:1px solid rgba(212,175,55,0.28);
+
+box-shadow:
+0 25px 70px rgba(0,0,0,0.35);
+
+opacity:0;
+
+transform:translateY(40px);
+
+transition:
+opacity 1.5s ease,
+transform 1.5s ease;
+
+}
+
+.reception-venue-card.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+@media(max-width:768px){
+
+.reception-venue-card{
+
+padding:55px 24px;
+
+border-radius:30px;
+
+}
+
+}
 /* COUNTDOWN */
 
 const weddingDate = new Date("August 31, 2026 12:20:00").getTime();
@@ -1213,6 +1337,33 @@ receptionImage.classList.add('show');
 
 if(receptionImage){
 receptionImageObserver.observe(receptionImage);
+}
+
+</script>
+    <script>
+
+const receptionVenueCard =
+document.querySelector('.reception-venue-card');
+
+const receptionVenueObserver =
+new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+receptionVenueCard.classList.add('show');
+
+}
+
+});
+
+},{ threshold:0.35 });
+
+if(receptionVenueCard){
+
+receptionVenueObserver.observe(receptionVenueCard);
+
 }
 
 </script>
