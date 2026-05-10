@@ -373,6 +373,59 @@ display:block;
 object-fit:contain;
 
 }
+  .invite-image-section{
+position:relative;
+overflow:hidden;
+}
+
+.invite-image-section::before{
+content:"";
+position:absolute;
+width:420px;
+height:420px;
+border-radius:50%;
+background:rgba(212,175,55,0.16);
+filter:blur(70px);
+top:12%;
+left:50%;
+transform:translateX(-50%);
+animation:inviteGlow 6s ease-in-out infinite alternate;
+}
+
+.invite-image{
+position:relative;
+z-index:2;
+opacity:0;
+transform:translateY(28px) scale(0.985);
+animation:inviteReveal 1.6s ease forwards, inviteBreath 9s ease-in-out infinite 1.8s;
+}
+
+@keyframes inviteReveal{
+to{
+opacity:1;
+transform:translateY(0) scale(1);
+}
+}
+
+@keyframes inviteBreath{
+0%,100%{
+transform:scale(1);
+}
+50%{
+transform:scale(1.01);
+}
+}
+
+@keyframes inviteGlow{
+from{
+opacity:0.45;
+transform:translateX(-50%) scale(0.9);
+}
+to{
+opacity:0.9;
+transform:translateX(-50%) scale(1.12);
+}
+}
 /* COUNTDOWN */
 
 .countdown-section{
