@@ -507,19 +507,210 @@ transform:translateY(-8px);
 
 /* VENUE */
 
-.venue-card{
-background:white;
-padding:40px;
-border-radius:30px;
-box-shadow:0 10px 40px rgba(0,0,0,0.06);
-max-width:900px;
-margin:auto;
-text-align:center;
+/* VENUE */
+
+.venue-section{
+
+position:relative;
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:80px 20px;
+
+overflow:hidden;
+
+background:
+linear-gradient(
+rgba(15,8,14,0.62),
+rgba(15,8,14,0.72)
+),
+url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1600');
+
+background-size:cover;
+background-position:center;
+
 }
 
-iframe{
-margin-top:30px;
-border-radius:20px;
+.venue-overlay{
+
+position:absolute;
+inset:0;
+
+background:
+radial-gradient(circle at top, rgba(212,175,55,0.18), transparent 35%),
+radial-gradient(circle at bottom, rgba(115,0,75,0.18), transparent 35%);
+
+animation:venueGlow 8s ease-in-out infinite alternate;
+
+}
+
+.venue-content{
+
+position:relative;
+z-index:2;
+
+text-align:center;
+
+max-width:700px;
+
+padding:70px 40px;
+
+border:1px solid rgba(212,175,55,0.28);
+
+border-radius:40px;
+
+background:rgba(18,10,17,0.42);
+
+backdrop-filter:blur(10px);
+
+box-shadow:
+0 20px 60px rgba(0,0,0,0.35);
+
+opacity:0;
+transform:translateY(40px);
+
+transition:
+opacity 1.5s ease,
+transform 1.5s ease;
+
+}
+
+.venue-content.show{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+.venue-kicker{
+
+font-family:'Cinzel',serif;
+
+letter-spacing:4px;
+
+text-transform:uppercase;
+
+font-size:0.72rem;
+
+color:#d4af37;
+
+margin-bottom:18px;
+
+}
+
+.venue-title{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:clamp(3rem,7vw,5rem);
+
+font-weight:600;
+
+line-height:1;
+
+color:#fff6ec;
+
+margin-bottom:22px;
+
+}
+
+.venue-subtitle{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:1.3rem;
+
+line-height:1.8;
+
+color:rgba(255,245,236,0.82);
+
+margin-bottom:42px;
+
+}
+
+.venue-btn{
+
+display:inline-block;
+
+padding:16px 34px;
+
+border-radius:999px;
+
+border:1px solid rgba(212,175,55,0.45);
+
+text-decoration:none;
+
+font-family:'Cinzel',serif;
+
+letter-spacing:2px;
+
+font-size:0.78rem;
+
+text-transform:uppercase;
+
+color:#f8e8d2;
+
+background:rgba(255,255,255,0.04);
+
+transition:all 0.4s ease;
+
+}
+
+.venue-btn:hover{
+
+transform:translateY(-4px);
+
+background:rgba(212,175,55,0.12);
+
+box-shadow:
+0 10px 30px rgba(212,175,55,0.18);
+
+}
+
+@keyframes venueGlow{
+
+from{
+opacity:0.4;
+transform:scale(1);
+}
+
+to{
+opacity:1;
+transform:scale(1.08);
+}
+
+}
+
+@media(max-width:768px){
+
+.venue-content{
+
+padding:55px 24px;
+
+border-radius:30px;
+
+}
+
+.venue-title{
+
+font-size:2.9rem;
+
+}
+
+.venue-subtitle{
+
+font-size:1.08rem;
+
+line-height:1.7;
+
+}
+
 }
 
 /* RSVP */
@@ -644,37 +835,36 @@ class="invite-image"
 </section>
   <section class="venue-section">
 
-<div class="venue-card">
+<div class="venue-overlay"></div>
+
+<div class="venue-content">
 
 <p class="venue-kicker">
-The Venue
+Where the celebration unfolds
 </p>
 
 <h2 class="venue-title">
-Mount Carmel Convention Center
+Confluence by Hycinth
 </h2>
 
-<p class="venue-location">
-Cotton Hill, Vazhuthacaud,<br>
+<p class="venue-subtitle">
+Hycinth Hotels<br>
+Manorama Road, Thampanoor<br>
 Thiruvananthapuram
 </p>
 
-<div class="venue-times">
-
-<div class="venue-time-block">
-<span>Reception</span>
-<strong>11:00 AM</strong>
-</div>
-
-<div class="venue-time-block">
-<span>Muhurtham</span>
-<strong>12:20 PM – 12:55 PM</strong>
-</div>
-
-</div>
-
 <a
-href="https://maps.google.com/?q=Mount+Carmel+Convention+Center+Thiruvananthapuram"
+href="https://maps.google.com/?q=Confluence+by+Hycinth+Thiruvananthapuram"
+target="_blank"
+class="venue-btn">
+
+View on Maps
+
+</a>
+
+</div>
+
+</section>
 target="_blank"
 class="venue-btn">
 
@@ -884,6 +1074,27 @@ inviteImage.classList.add('show');
 },{ threshold:0.35 });
 
 observer.observe(inviteImage);
+
+</script>
+  <script>
+
+const venueContent = document.querySelector('.venue-content');
+
+const venueObserver = new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+venueContent.classList.add('show');
+
+}
+
+});
+
+},{ threshold:0.35 });
+
+venueObserver.observe(venueContent);
 
 </script>
 </body>
