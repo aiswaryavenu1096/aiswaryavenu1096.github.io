@@ -527,10 +527,10 @@ overflow:hidden;
 
 background:
 linear-gradient(
-rgba(15,8,14,0.62),
-rgba(15,8,14,0.72)
+rgba(33,15,18,0.52),
+rgba(20,10,12,0.68)
 ),
-url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1600');
+url('https://images.unsplash.com/photo-1513278974582-3e1b4a4fa21d?q=80&w=1600');
 
 background-size:cover;
 background-position:center;
@@ -547,6 +547,38 @@ radial-gradient(circle at top, rgba(212,175,55,0.18), transparent 35%),
 radial-gradient(circle at bottom, rgba(115,0,75,0.18), transparent 35%);
 
 animation:venueGlow 8s ease-in-out infinite alternate;
+
+}
+  .venue-section::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background-image:
+radial-gradient(rgba(255,215,140,0.28) 1px, transparent 1px);
+
+background-size:120px 120px;
+
+opacity:0.4;
+
+animation:floatParticles 18s linear infinite;
+
+pointer-events:none;
+
+}
+
+@keyframes floatParticles{
+
+from{
+transform:translateY(0);
+}
+
+to{
+transform:translateY(-120px);
+}
 
 }
 
@@ -578,6 +610,8 @@ transform:translateY(40px);
 transition:
 opacity 1.5s ease,
 transform 1.5s ease;
+  border-top:
+1px solid rgba(255,255,255,0.12);
 
 }
 
