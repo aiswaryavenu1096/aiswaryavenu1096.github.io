@@ -396,8 +396,16 @@ animation:inviteGlow 6s ease-in-out infinite alternate;
 position:relative;
 z-index:2;
 opacity:0;
-transform:translateY(28px) scale(0.985);
-animation:inviteReveal 1.6s ease forwards, inviteBreath 9s ease-in-out infinite 1.8s;
+transform:translateY(40px) scale(0.97);
+transition:
+opacity 1.5s ease,
+transform 1.5s ease;
+}
+
+.invite-image.show{
+opacity:1;
+transform:translateY(0) scale(1);
+animation:inviteBreath 9s ease-in-out infinite 1.5s;
 }
 
 @keyframes inviteReveal{
@@ -814,6 +822,26 @@ document.getElementById("minutes").innerHTML = minutes;
 },1000);
 
 </script>
+<script>
 
+const inviteImage = document.querySelector('.invite-image');
+
+const observer = new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+inviteImage.classList.add('show');
+
+}
+
+});
+
+},{ threshold:0.35 });
+
+observer.observe(inviteImage);
+
+</script>
 </body>
 </html>
