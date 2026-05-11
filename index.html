@@ -1916,29 +1916,27 @@ View on Maps
 
 <section class="countdown-section">
 
-<h2 class="section-title">
-Countdown to Forever
-</h2>
+<h2 class="section-title">Countdown to Forever</h2>
 
 <div class="countdown-box">
 
 <div class="time">
-<h3 id="days">0</h3>
+<h3 class="cd-days">0</h3>
 <p>Days</p>
 </div>
 
 <div class="time">
-<h3 id="hours">0</h3>
+<h3 class="cd-hours">0</h3>
 <p>Hours</p>
 </div>
 
 <div class="time">
-<h3 id="minutes">0</h3>
+<h3 class="cd-minutes">0</h3>
 <p>Minutes</p>
 </div>
 
 <div class="time">
-<h3 id="seconds">0</h3>
+<h3 class="cd-seconds">0</h3>
 <p>Seconds</p>
 </div>
 
@@ -1946,6 +1944,28 @@ Countdown to Forever
 
 </section>
 
+<script>
+function updateWeddingCountdown(){
+const target = new Date("2026-08-31T12:20:00+05:30").getTime();
+const now = Date.now();
+const diff = target - now;
+
+document.querySelector(".cd-days").textContent =
+Math.floor(diff / (1000 * 60 * 60 * 24));
+
+document.querySelector(".cd-hours").textContent =
+Math.floor((diff / (1000 * 60 * 60)) % 24);
+
+document.querySelector(".cd-minutes").textContent =
+Math.floor((diff / (1000 * 60)) % 60);
+
+document.querySelector(".cd-seconds").textContent =
+Math.floor((diff / 1000) % 60);
+}
+
+updateWeddingCountdown();
+setInterval(updateWeddingCountdown, 1000);
+</script>
 <!-- STORY -->
 
 <section class="story">
@@ -2195,44 +2215,9 @@ line-height:1.65;
 }
 
 }
-}
+
 /*  */
-
-<script>
-
-const targetDate =
-new Date("2026-08-31T12:20:00+05:30").getTime();
-
-function runCountdown(){
-
-const now = new Date().getTime();
-
-const distance = targetDate - now;
-
-const days =
-Math.floor(distance / (1000 * 60 * 60 * 24));
-
-const hours =
-Math.floor((distance / (1000 * 60 * 60)) % 24);
-
-const minutes =
-Math.floor((distance / (1000 * 60)) % 60);
-
-const seconds =
-Math.floor((distance / 1000) % 60);
-
-document.getElementById("days").innerHTML = days;
-document.getElementById("hours").innerHTML = hours;
-document.getElementById("minutes").innerHTML = minutes;
-document.getElementById("seconds").innerHTML = seconds;
-
-}
-
-runCountdown();
-
-setInterval(runCountdown,1000);
-
-</script>
+</style>
 
 </body>
 </html>
