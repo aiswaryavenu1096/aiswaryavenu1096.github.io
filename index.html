@@ -513,20 +513,32 @@ transform:translateY(-8px);
 /* VENUE */
 
 .venue-section{
+
 position:relative;
+
 min-height:100vh;
+
 display:flex;
+
 justify-content:center;
+
 align-items:center;
-padding:80px 20px;
+
+padding:90px 20px;
+
 overflow:hidden;
 
 background:
-linear-gradient(rgba(20,8,16,0.58),rgba(20,8,16,0.72)),
-url('hero-final.png');
+linear-gradient(
+rgba(255,250,245,0.90),
+rgba(250,247,244,0.92)
+),
+url('./venue-bg.png');
 
 background-size:cover;
+
 background-position:center;
+
 }
 
 .venue-overlay{
@@ -577,33 +589,37 @@ transform:translateY(-120px);
 .venue-content{
 
 position:relative;
+
 z-index:2;
 
-text-align:center;
+max-width:760px;
 
-max-width:700px;
+width:100%;
 
-padding:70px 40px;
-
-border:1px solid rgba(212,175,55,0.28);
+padding:70px 36px;
 
 border-radius:40px;
 
-background:rgba(18,10,17,0.42);
+background:
+rgba(255,252,248,0.72);
 
 backdrop-filter:blur(10px);
 
+border:
+1px solid rgba(120,95,75,0.12);
+
 box-shadow:
-0 20px 60px rgba(0,0,0,0.35);
+0 25px 70px rgba(0,0,0,0.08);
+
+text-align:center;
 
 opacity:0;
+
 transform:translateY(40px);
 
 transition:
 opacity 1.5s ease,
 transform 1.5s ease;
-  border-top:
-1px solid rgba(255,255,255,0.12);
 
 }
 
@@ -624,7 +640,7 @@ text-transform:uppercase;
 
 font-size:0.72rem;
 
-color:#d4af37;
+color:#8f6c45;
 
 margin-bottom:18px;
 
@@ -640,7 +656,7 @@ font-weight:600;
 
 line-height:1;
 
-color:#fff6ec;
+color:#4f3426;
 
 margin-bottom:22px;
 
@@ -654,7 +670,7 @@ font-size:1.3rem;
 
 line-height:1.8;
 
-color:rgba(255,245,236,0.82);
+color:#6b5647;
 
 margin-bottom:42px;
 
@@ -664,27 +680,41 @@ margin-bottom:42px;
 
 display:inline-block;
 
-padding:16px 34px;
+margin-top:30px;
+
+padding:15px 34px;
 
 border-radius:999px;
 
-border:1px solid rgba(212,175,55,0.45);
+border:
+1px solid rgba(120,95,75,0.22);
 
-text-decoration:none;
+background:
+rgba(255,255,255,0.45);
+
+color:#5c4332;
 
 font-family:'Cinzel',serif;
 
-letter-spacing:2px;
+font-size:0.82rem;
 
-font-size:0.78rem;
+letter-spacing:2px;
 
 text-transform:uppercase;
 
-color:#f8e8d2;
+text-decoration:none;
 
-background:rgba(255,255,255,0.04);
+transition:all 0.35s ease;
 
-transition:all 0.4s ease;
+}
+
+.venue-btn:hover{
+
+background:#5c4332;
+
+color:white;
+
+transform:translateY(-3px);
 
 }
 
