@@ -2201,38 +2201,31 @@ line-height:1.65;
 <script>
 const targetDate = new Date("2026-08-31T12:20:00+05:30").getTime();
 
+function setAll(id, value){
+document.querySelectorAll("#" + id).forEach(el=>{
+el.textContent = value;
+});
+}
+
 function runCountdown(){
 
 const now = new Date().getTime();
-
 const distance = targetDate - now;
 
-const daysEl = document.querySelector("#days");
-const hoursEl = document.querySelector("#hours");
-const minutesEl = document.querySelector("#minutes");
-const secondsEl = document.querySelector("#seconds");
+const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+const minutes = Math.floor((distance / (1000 * 60)) % 60);
+const seconds = Math.floor((distance / 1000) % 60);
 
-if(!daysEl || !hoursEl || !minutesEl || !secondsEl){
-return;
-}
-
-daysEl.textContent =
-Math.floor(distance / (1000 * 60 * 60 * 24));
-
-hoursEl.textContent =
-Math.floor((distance / (1000 * 60 * 60)) % 24);
-
-minutesEl.textContent =
-Math.floor((distance / (1000 * 60)) % 60);
-
-secondsEl.textContent =
-Math.floor((distance / 1000) % 60);
+setAll("days", days);
+setAll("hours", hours);
+setAll("minutes", minutes);
+setAll("seconds", seconds);
 
 }
 
 runCountdown();
-
-setInterval(runCountdown,1000);
+setInterval(runCountdown, 1000);
 </script>
 </body>
 </html>
