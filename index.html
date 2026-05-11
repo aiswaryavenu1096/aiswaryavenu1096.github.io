@@ -1601,8 +1601,13 @@ z-index:3;
 
 .party-sparkles span{
 position:absolute;
-width:6px;
-height:6px;
+width:10px;
+height:10px;
+background:
+radial-gradient(circle,
+#fff6d8 0%,
+#f5d27b 45%,
+rgba(245,210,123,0) 72%);
 border-radius:50%;
 background:#f5d27b;
 box-shadow:
@@ -1622,17 +1627,26 @@ animation:sparkPop 3.8s ease-in-out infinite;
 .party-sparkles span:nth-child(8){top:12%;left:42%;animation-delay:1.5s;}
 
 @keyframes sparkPop{
+
 0%,100%{
 transform:scale(0);
 opacity:0;
 }
-20%{
-transform:scale(1);
-opacity:0.95;
+
+15%{
+opacity:1;
 }
-45%{
-transform:scale(2.4);
+
+30%{
+transform:scale(2.8);
+opacity:1;
+}
+
+55%{
+transform:scale(5.5);
 opacity:0;
+}
+
 }
 }
 </style>
@@ -1793,9 +1807,9 @@ View on Maps
 
 <div class="reception-panel">
 
-<p class="reception-kicker">An evening of celebration</p>
+<p class="reception-kicker">An evening of love, celebration & togetherness</p>
 
-<h2 class="reception-main-title">Reception Celebration</h2>
+<h2 class="reception-main-title">Reception Night</h2>
 
 <p class="reception-couple">Aiswarya <span>&</span> Rakesh</p>
 
@@ -1816,7 +1830,7 @@ View on Maps
 
 <div class="timeline-item">
 <strong>9:00 PM onwards</strong>
-<p>DJ Night </p>
+<p>DJ Night</p>
 </div>
 </div>
 
