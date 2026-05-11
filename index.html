@@ -2199,33 +2199,40 @@ line-height:1.65;
 /*  */
 
 <script>
-const targetDate = new Date("2026-08-31T12:20:00+05:30").getTime();
 
-function setAll(id, value){
-document.querySelectorAll("#" + id).forEach(el=>{
-el.textContent = value;
-});
-}
+const targetDate =
+new Date("2026-08-31T12:20:00+05:30").getTime();
 
 function runCountdown(){
 
 const now = new Date().getTime();
+
 const distance = targetDate - now;
 
-const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-const minutes = Math.floor((distance / (1000 * 60)) % 60);
-const seconds = Math.floor((distance / 1000) % 60);
+const days =
+Math.floor(distance / (1000 * 60 * 60 * 24));
 
-setAll("days", days);
-setAll("hours", hours);
-setAll("minutes", minutes);
-setAll("seconds", seconds);
+const hours =
+Math.floor((distance / (1000 * 60 * 60)) % 24);
+
+const minutes =
+Math.floor((distance / (1000 * 60)) % 60);
+
+const seconds =
+Math.floor((distance / 1000) % 60);
+
+document.getElementById("days").innerHTML = days;
+document.getElementById("hours").innerHTML = hours;
+document.getElementById("minutes").innerHTML = minutes;
+document.getElementById("seconds").innerHTML = seconds;
 
 }
 
 runCountdown();
-setInterval(runCountdown, 1000);
+
+setInterval(runCountdown,1000);
+
 </script>
+
 </body>
 </html>
