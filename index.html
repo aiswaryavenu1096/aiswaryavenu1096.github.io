@@ -903,6 +903,57 @@ transform:translateX(-120%);
 transform:translateX(120%);
 }
 }
+.invite-image-section,
+.reception-image-section,
+.venue-section,
+.reception-venue-section,
+.countdown-section{
+position:relative;
+}
+
+.invite-image-section::after,
+.reception-image-section::after,
+.venue-section::after,
+.reception-venue-section::after{
+content:"";
+position:absolute;
+left:0;
+right:0;
+bottom:-1px;
+height:120px;
+background:linear-gradient(
+to bottom,
+transparent,
+rgba(18,11,17,0.92)
+);
+z-index:5;
+pointer-events:none;
+}
+
+.venue-section::before{
+content:"";
+position:absolute;
+left:0;
+right:0;
+top:-1px;
+height:120px;
+background:linear-gradient(
+to bottom,
+rgba(18,11,17,0.9),
+transparent
+);
+z-index:1;
+pointer-events:none;
+}
+  .invite-image-section,
+.reception-image-section{
+background:#120b11;
+padding:30px 0;
+}
+
+.venue-section{
+margin-top:-1px;
+}
 </style>
 </head>
 
