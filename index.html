@@ -52,14 +52,23 @@ z-index:9999;
 /* HERO SECTION */
 
 .hero{
-min-height:100svh;
+height:100vh;
 position:relative;
 display:flex;
 justify-content:center;
 align-items:center;
 overflow:hidden;
-padding:28px 0;
-background:transparent;
+
+background:
+linear-gradient(
+rgba(10,4,10,0.28),
+rgba(10,4,10,0.38)
+),
+url('./hero-final.png');
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
 }
 
 /* TEXTURE */
@@ -920,23 +929,10 @@ max-width:100%;
 box-sizing:border-box;
 }
   body{
-filter:brightness(1.08) saturate(1.08);
-}
-  .hero-art{
-width:min(88%,760px);
-max-height:92svh;
-object-fit:contain;
-border-radius:30px;
-box-shadow:0 28px 85px rgba(18,8,16,0.28);
-position:relative;
-z-index:1;
-}
 
-.hero-content,
-.poetic-line,
-.scroll-note{
-z-index:3;
 }
+ 
+
 </style>
 </head>
 
@@ -945,7 +941,7 @@ z-index:3;
 <!-- HERO -->
 
 <section class="hero">
-<img src="./hero-final.png" class="hero-art" alt="Rakesh and Aiswarya monogram">
+
 
 <div class="hero-texture"></div>
 <div class="hero-glow"></div>
