@@ -2331,12 +2331,9 @@ grid-row:span 2;
 border-radius:36px;
 }
 
-.tilt-left{
-transform:rotate(-2deg);
-}
-
+.tilt-left,
 .tilt-right{
-transform:rotate(2deg);
+transform:none;
 }
 
 .moment-card:hover img{
@@ -2454,6 +2451,35 @@ line-height:1.9 !important;
 color:#7a646d !important;
 font-style:italic !important;
 letter-spacing:0.3px !important;
+}
+@media(max-width:768px){
+
+.moments-grid{
+display:grid !important;
+grid-template-columns:1fr 1fr !important;
+gap:12px !important;
+}
+
+.moment-card,
+.hero-card{
+width:100% !important;
+min-width:0 !important;
+height:190px !important;
+grid-column:auto !important;
+grid-row:auto !important;
+}
+
+.hero-card{
+grid-column:span 2 !important;
+height:300px !important;
+}
+
+.moment-card img{
+width:100% !important;
+height:100% !important;
+object-fit:cover !important;
+}
+
 }
 </style>
 
