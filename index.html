@@ -1711,6 +1711,35 @@ padding:22px 12px;
 }
 
 }
+  @media(max-width:768px){
+
+.moments-grid{
+display:grid !important;
+grid-template-columns:1fr 1fr !important;
+gap:12px !important;
+overflow:visible !important;
+padding:0 !important;
+}
+
+.moments-grid .hero-card{
+grid-column:span 2 !important;
+height:300px !important;
+min-width:0 !important;
+}
+
+.moments-grid .moment-card{
+height:190px !important;
+min-width:0 !important;
+border-radius:22px !important;
+}
+
+.moments-grid .moment-card img{
+width:100% !important;
+height:100% !important;
+object-fit:cover !important;
+}
+
+}
 </style>
 </head>
 
