@@ -1591,6 +1591,50 @@ transform:translateY(125vh) translateX(-35px) rotate(420deg) scale(0.9);
 opacity:0;
 }
 }
+.party-sparkles{
+position:absolute;
+inset:0;
+pointer-events:none;
+overflow:hidden;
+z-index:3;
+}
+
+.party-sparkles span{
+position:absolute;
+width:6px;
+height:6px;
+border-radius:50%;
+background:#f5d27b;
+box-shadow:
+0 0 10px #f5d27b,
+0 0 22px rgba(245,210,123,0.7);
+opacity:0;
+animation:sparkPop 3.8s ease-in-out infinite;
+}
+
+.party-sparkles span:nth-child(1){top:18%;left:18%;animation-delay:0s;}
+.party-sparkles span:nth-child(2){top:24%;left:78%;animation-delay:.7s;}
+.party-sparkles span:nth-child(3){top:46%;left:12%;animation-delay:1.2s;}
+.party-sparkles span:nth-child(4){top:62%;left:86%;animation-delay:1.8s;}
+.party-sparkles span:nth-child(5){top:76%;left:24%;animation-delay:2.3s;}
+.party-sparkles span:nth-child(6){top:34%;left:52%;animation-delay:2.8s;}
+.party-sparkles span:nth-child(7){top:70%;left:62%;animation-delay:3.2s;}
+.party-sparkles span:nth-child(8){top:12%;left:42%;animation-delay:1.5s;}
+
+@keyframes sparkPop{
+0%,100%{
+transform:scale(0);
+opacity:0;
+}
+20%{
+transform:scale(1);
+opacity:0.95;
+}
+45%{
+transform:scale(2.4);
+opacity:0;
+}
+}
 </style>
 </head>
 
@@ -1742,6 +1786,10 @@ View on Maps
 </section>
   
 <section class="reception-experience">
+  <div class="party-sparkles">
+<span></span><span></span><span></span><span></span>
+<span></span><span></span><span></span><span></span>
+</div>
 
 <div class="reception-panel">
 
