@@ -2024,6 +2024,10 @@ and the countless memories that brought us here.
 <img src="./waterfall.jpg.jpg" alt="">
 </div>
 
+<div class="moment-card tilt-left">
+<img src="./pink.jpeg" alt="">
+</div>
+
 </div>
 
 </section>
@@ -2252,17 +2256,38 @@ overflow:hidden;
 
 .moments-title{
 font-family:'Cormorant Garamond',serif;
-font-size:4rem;
+font-size:4.5rem;
+font-weight:600;
 color:#5f2338;
-margin-bottom:14px;
+margin-bottom:12px;
+position:relative;
+display:inline-block;
+letter-spacing:1px;
+}
+
+.moments-title::after{
+content:"";
+position:absolute;
+left:50%;
+bottom:-10px;
+transform:translateX(-50%);
+width:90px;
+height:2px;
+background:
+linear-gradient(to right,
+transparent,
+#d4af37,
+transparent);
 }
 
 .moments-subtitle{
-max-width:680px;
-margin:0 auto 46px;
+max-width:720px;
+margin:28px auto 52px;
 font-size:1.05rem;
-line-height:1.8;
-color:#6f5b63;
+line-height:1.9;
+color:#7a646d;
+font-style:italic;
+letter-spacing:0.3px;
 }
 
 .moments-grid{
