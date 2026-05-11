@@ -384,6 +384,7 @@ object-fit:contain;
   .invite-image-section{
 position:relative;
 overflow:hidden;
+background:transparent;
 }
 
 .invite-image-section::before{
@@ -392,7 +393,7 @@ position:absolute;
 width:420px;
 height:420px;
 border-radius:50%;
-background:rgba(212,175,55,0.16);
+background:rgba(212,175,55,0.08);
 filter:blur(70px);
 top:12%;
 left:50%;
@@ -401,13 +402,17 @@ animation:inviteGlow 6s ease-in-out infinite alternate;
 }
 
 .invite-image{
+width:88%;
+max-width:760px;
+display:block;
+object-fit:contain;
+border-radius:28px;
+box-shadow:0 25px 80px rgba(18,8,16,0.28);
 position:relative;
 z-index:2;
 opacity:0;
 transform:translateY(40px) scale(0.97);
-transition:
-opacity 1.5s ease,
-transform 1.5s ease;
+transition:opacity 1.5s ease, transform 1.5s ease;
 }
 
 .invite-image.show{
