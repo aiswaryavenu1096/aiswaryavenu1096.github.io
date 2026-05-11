@@ -950,6 +950,199 @@ padding:45px 0;
 }
 
 }
+  .reception-experience{
+padding:40px 18px 70px;
+display:flex;
+justify-content:center;
+position:relative;
+}
+
+.reception-panel{
+width:min(92%,760px);
+
+background:
+linear-gradient(
+145deg,
+rgba(30,10,28,0.82),
+rgba(18,8,16,0.92)
+);
+
+border-radius:34px;
+
+padding:48px 30px;
+
+box-shadow:
+0 30px 90px rgba(18,8,16,0.35),
+0 0 0 1px rgba(255,255,255,0.08);
+
+backdrop-filter:blur(6px);
+
+position:relative;
+overflow:hidden;
+}
+
+.reception-panel::before{
+content:"";
+position:absolute;
+inset:0;
+
+background:
+radial-gradient(circle at top right,
+rgba(212,175,55,0.18),
+transparent 28%);
+
+pointer-events:none;
+}
+
+.reception-kicker{
+text-transform:uppercase;
+letter-spacing:4px;
+font-size:0.78rem;
+color:#d8b36a;
+text-align:center;
+margin-bottom:14px;
+}
+
+.reception-main-title{
+font-family:'Cormorant Garamond',serif;
+font-size:4rem;
+line-height:0.95;
+text-align:center;
+color:#f5dfb2;
+margin-bottom:16px;
+}
+
+.reception-couple{
+text-align:center;
+font-family:'Cormorant Garamond',serif;
+font-size:2.1rem;
+color:white;
+margin-bottom:42px;
+}
+
+.reception-couple span{
+color:#d8b36a;
+padding:0 10px;
+}
+
+.reception-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:24px;
+}
+
+.timeline-card,
+.venue-card-party{
+background:rgba(255,255,255,0.06);
+
+border-radius:24px;
+
+padding:28px;
+
+border:1px solid rgba(255,255,255,0.08);
+}
+
+.timeline-card h3,
+.venue-card-party h3{
+font-family:'Cormorant Garamond',serif;
+font-size:2rem;
+color:#f5dfb2;
+margin-bottom:24px;
+}
+
+.timeline-item{
+padding-bottom:20px;
+margin-bottom:20px;
+border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.timeline-item:last-child{
+border-bottom:none;
+margin-bottom:0;
+padding-bottom:0;
+}
+
+.timeline-item strong{
+display:block;
+font-size:1.1rem;
+color:#d8b36a;
+margin-bottom:6px;
+}
+
+.timeline-item p,
+.venue-card-party p{
+color:rgba(255,255,255,0.82);
+line-height:1.7;
+}
+
+.venue-card-party h4{
+font-family:'Cormorant Garamond',serif;
+font-size:2rem;
+color:white;
+margin-bottom:16px;
+}
+
+.party-map-btn{
+display:inline-block;
+margin-top:28px;
+
+padding:14px 28px;
+
+border-radius:999px;
+
+border:1px solid rgba(216,179,106,0.45);
+
+color:#f5dfb2;
+text-decoration:none;
+
+transition:0.35s ease;
+}
+
+.party-map-btn:hover{
+background:#d8b36a;
+color:#1b0d18;
+}
+
+.party-note{
+margin-top:34px;
+text-align:center;
+font-family:'Cormorant Garamond',serif;
+font-size:1.5rem;
+color:#f5dfb2;
+}
+
+@media(max-width:768px){
+
+.reception-experience{
+padding:26px 14px 56px;
+}
+
+.reception-panel{
+padding:34px 22px;
+border-radius:28px;
+}
+
+.reception-main-title{
+font-size:2.8rem;
+}
+
+.reception-couple{
+font-size:1.8rem;
+margin-bottom:30px;
+}
+
+.reception-grid{
+grid-template-columns:1fr;
+gap:18px;
+}
+
+.timeline-card,
+.venue-card-party{
+padding:22px;
+border-radius:20px;
+}
+
+}
 </style>
 </head>
 
@@ -1017,42 +1210,56 @@ View on Maps
 </div>
 
 </section>
-  <section class="reception-image-section">
+  
+<section class="reception-experience">
 
-<img
-src="./reception-final-new.png"
-alt="Reception Celebration"
-class="reception-image"
-/>
-</section>
-<section class="reception-venue-section">
+<div class="reception-panel">
 
-<div class="reception-venue-card">
+<p class="reception-kicker">An evening of celebration</p>
 
-<p class="venue-kicker">
-Reception Venue
-</p>
+<h2 class="reception-main-title">Reception Celebration</h2>
 
-<h2 class="venue-title">
-Confluence by Hycinth
-</h2>
+<p class="reception-couple">Aiswarya <span>&</span> Rakesh</p>
 
-<p class="venue-subtitle">
-Hycinth Hotels<br>
-Manorama Road, Thampanoor<br>
-Thiruvananthapuram
-</p>
+<div class="reception-grid">
 
-<a
-href="https://maps.google.com/?q=Confluence+by+Hycinth+Thiruvananthapuram"
+<div class="timeline-card">
+<h3>Event Flow</h3>
+
+<div class="timeline-item">
+<strong>5:00 PM</strong>
+<p>Reception begins</p>
+</div>
+
+<div class="timeline-item">
+<strong>Evening</strong>
+<p>Dinner, greetings & celebration</p>
+</div>
+
+<div class="timeline-item">
+<strong>9:00 PM</strong>
+<p>DJ Night onwards</p>
+</div>
+</div>
+
+<div class="venue-card-party">
+<h3>Venue</h3>
+<h4>Confluence by Hycinth</h4>
+<p>Hycinth Hotels<br>Manorama Road, Thampanoor<br>Thiruvananthapuram</p>
+
+<a href="https://maps.google.com/?q=Confluence+by+Hycinth+Hycinth+Hotels+Manorama+Road+Thampanoor+Thiruvananthapuram"
 target="_blank"
-class="venue-btn">
-
+class="party-map-btn">
 View on Maps
-
 </a>
+</div>
 
 </div>
+
+<p class="party-note">The night comes alive  ✨</p>
+
+</div>
+
 </section>
 <!-- COUNTDOWN -->
 
