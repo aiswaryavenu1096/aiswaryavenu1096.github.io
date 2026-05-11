@@ -1288,7 +1288,7 @@ pointer-events:none;
 text-transform:uppercase;
 letter-spacing:4px;
 font-size:0.78rem;
-color:#b88a44;
+color:#8a5a22;
 text-align:center;
 margin-bottom:16px;
 position:relative;
@@ -1481,7 +1481,8 @@ background:#7d3350;
 text-align:center;
 font-family:'Cormorant Garamond',serif;
 font-size:1.5rem;
-color:#7d5d69;
+color:#5f2338;
+font-weight:600;
 position:relative;
 z-index:2;
 }
@@ -1543,6 +1544,61 @@ grid-template-columns:1fr;
 }
   
 }
+  .flower-confetti{
+position:absolute;
+inset:0;
+overflow:hidden;
+pointer-events:none;
+z-index:4;
+}
+
+.flower-confetti span{
+position:absolute;
+top:-12%;
+display:block;
+font-size:24px;
+opacity:0;
+filter:drop-shadow(0 4px 8px rgba(120,60,80,0.25));
+animation:flowerFall linear infinite;
+}
+
+.flower-confetti span:nth-child(1){left:4%; animation-duration:9s; animation-delay:-1s;}
+.flower-confetti span:nth-child(2){left:10%; animation-duration:12s; animation-delay:-5s; font-size:30px;}
+.flower-confetti span:nth-child(3){left:17%; animation-duration:10s; animation-delay:-3s;}
+.flower-confetti span:nth-child(4){left:24%; animation-duration:14s; animation-delay:-7s; font-size:20px;}
+.flower-confetti span:nth-child(5){left:31%; animation-duration:11s; animation-delay:-2s; font-size:28px;}
+.flower-confetti span:nth-child(6){left:38%; animation-duration:15s; animation-delay:-8s;}
+.flower-confetti span:nth-child(7){left:45%; animation-duration:9.5s; animation-delay:-4s; font-size:18px;}
+.flower-confetti span:nth-child(8){left:52%; animation-duration:13s; animation-delay:-6s; font-size:32px;}
+.flower-confetti span:nth-child(9){left:59%; animation-duration:10.5s; animation-delay:-2.5s;}
+.flower-confetti span:nth-child(10){left:66%; animation-duration:16s; animation-delay:-9s; font-size:21px;}
+.flower-confetti span:nth-child(11){left:73%; animation-duration:11.5s; animation-delay:-4.5s; font-size:29px;}
+.flower-confetti span:nth-child(12){left:80%; animation-duration:14.5s; animation-delay:-7.5s;}
+.flower-confetti span:nth-child(13){left:86%; animation-duration:10s; animation-delay:-1.8s; font-size:26px;}
+.flower-confetti span:nth-child(14){left:91%; animation-duration:13.5s; animation-delay:-6.5s;}
+.flower-confetti span:nth-child(15){left:96%; animation-duration:12.5s; animation-delay:-3.5s; font-size:22px;}
+.flower-confetti span:nth-child(16){left:50%; animation-duration:17s; animation-delay:-10s; font-size:34px;}
+
+@keyframes flowerFall{
+0%{
+transform:translateY(-15vh) translateX(0) rotate(0deg) scale(0.8);
+opacity:0;
+}
+
+8%{
+opacity:0.9;
+}
+
+50%{
+transform:translateY(55vh) translateX(45px) rotate(180deg) scale(1);
+opacity:0.85;
+}
+
+100%{
+transform:translateY(125vh) translateX(-35px) rotate(420deg) scale(0.9);
+opacity:0;
+}
+}
 </style>
 </head>
 
@@ -1576,6 +1632,12 @@ Scroll to unfold
 
 <!-- INVITE -->
 <section class="wedding-section">
+  <div class="flower-confetti">
+<span>🌸</span><span>🌺</span><span>🌸</span><span>🌷</span>
+<span>🌸</span><span>🌺</span><span>🌸</span><span>🌷</span>
+<span>🌸</span><span>🌺</span><span>🌸</span><span>🌷</span>
+<span>🌸</span><span>🌺</span><span>🌸</span><span>🌷</span>
+</div>
 
 <div class="wedding-card">
 
