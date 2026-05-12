@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1808,6 +1809,52 @@ border-radius:20px;
 grid-column:1 / -1;
 grid-row:auto;
 height:320px;
+}
+
+}
+.memories-collage{
+display:flex !important;
+flex-wrap:wrap !important;
+gap:14px !important;
+max-width:980px !important;
+margin:auto !important;
+}
+
+.memory-photo{
+height:220px !important;
+flex:1 1 calc(25% - 14px) !important;
+border-radius:24px !important;
+overflow:hidden !important;
+}
+
+.memory-main{
+height:460px !important;
+flex:1 1 calc(50% - 14px) !important;
+}
+
+.memory-photo img{
+width:100% !important;
+height:100% !important;
+object-fit:cover !important;
+display:block !important;
+}
+
+@media(max-width:768px){
+
+.memories-collage{
+display:flex !important;
+flex-wrap:wrap !important;
+gap:12px !important;
+}
+
+.memory-photo{
+height:180px !important;
+flex:1 1 calc(50% - 12px) !important;
+}
+
+.memory-main{
+height:320px !important;
+flex:1 1 100% !important;
 }
 
 }
