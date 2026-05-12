@@ -1858,6 +1858,49 @@ flex:1 1 100% !important;
 }
 
 }
+.memory-photo{
+transition:
+transform 0.5s ease,
+box-shadow 0.5s ease,
+filter 0.5s ease;
+}
+
+.memory-photo:hover{
+transform:translateY(-8px) scale(1.02);
+box-shadow:
+0 26px 70px rgba(90,50,60,0.28),
+0 0 0 1px rgba(212,175,55,0.45);
+}
+
+.memory-photo img{
+transition:transform 0.8s ease, filter 0.8s ease;
+}
+
+.memory-photo:hover img{
+transform:scale(1.08);
+filter:brightness(1.08);
+}
+
+@media(max-width:768px){
+
+.memory-photo{
+animation:softPhotoFloat 5s ease-in-out infinite alternate;
+}
+
+.memory-photo:nth-child(even){
+animation-delay:1s;
+}
+
+@keyframes softPhotoFloat{
+from{
+transform:translateY(0);
+}
+to{
+transform:translateY(-6px);
+}
+}
+
+}
 </style>
 </head>
 
