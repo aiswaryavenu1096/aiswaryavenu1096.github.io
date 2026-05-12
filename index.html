@@ -196,38 +196,57 @@ display:none;
 
 /* POETIC LINE */
 .poetic-line{
-
 position:absolute;
-
 top:7.5vh;
-
 left:0;
-
 width:100%;
-
 padding:0 34px;
 
-font-family:'Imperial Script',cursive;
-
-font-size:1.28rem;
-
-line-height:1.1;
-
-letter-spacing:0.2px;
-
+font-family:'Cormorant Garamond',serif;
+font-size:1.45rem;
+font-weight:500;
+line-height:1.35;
+letter-spacing:1px;
 text-align:center;
 
-color:#efd8a0;
-
-text-shadow:0 0 14px rgba(0,0,0,0.88);
+color:#f6dfaa;
+text-shadow:
+0 2px 10px rgba(0,0,0,0.85),
+0 0 18px rgba(212,175,55,0.35);
 
 z-index:4;
+}
+.typing-line{
+display:inline-block;
+overflow:hidden;
+white-space:nowrap;
+width:0;
+border-right:1px solid rgba(246,223,170,0.9);
+animation:
+typeFirst 2.8s steps(25,end) forwards,
+blinkCursor 0.8s step-end infinite;
+}
 
-opacity:0;
+.typing-line.second{
+animation:
+typeSecond 3s steps(28,end) forwards 2.9s,
+blinkCursor 0.8s step-end infinite;
+}
 
-animation:fadeReveal 2s ease forwards;
-animation-delay:0.5s;
+@keyframes typeFirst{
+from{width:0;}
+to{width:24ch;}
+}
 
+@keyframes typeSecond{
+from{width:0;}
+to{width:28ch;}
+}
+
+@keyframes blinkCursor{
+50%{
+border-color:transparent;
+}
 }
 @keyframes fadeReveal{
 
@@ -322,9 +341,10 @@ margin-top:-25px;
 }
 
 .poetic-line{
-font-size:1.3rem;
-line-height:1.7;
-padding:0 30px;
+font-size:1.08rem;
+line-height:1.5;
+padding:0 20px;
+top:6.5vh;
 }
 
 }
@@ -2052,10 +2072,9 @@ z-index:2;
 <div class="hero-glow"></div>
 
 <p class="poetic-line">
-In the most unexpected moment,<br>
-we found home in each other.
+<span class="typing-line">An unexpected beginning,</span><br>
+<span class="typing-line second">turning into forever. </span>
 </p>
-
 <div class="hero-content">
 <button class="music-btn" onclick="toggleMusic()">
 Play Our Song
