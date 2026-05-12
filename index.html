@@ -216,38 +216,6 @@ text-shadow:
 
 z-index:4;
 }
-.typing-line{
-display:inline-block;
-overflow:hidden;
-white-space:nowrap;
-width:0;
-border-right:1px solid rgba(246,223,170,0.9);
-animation:
-typeFirst 2.8s steps(25,end) forwards,
-blinkCursor 0.8s step-end infinite;
-}
-
-.typing-line.second{
-animation:
-typeSecond 3s steps(28,end) forwards 2.9s,
-blinkCursor 0.8s step-end infinite;
-}
-
-@keyframes typeFirst{
-from{width:0;}
-to{width:24ch;}
-}
-
-@keyframes typeSecond{
-from{width:0;}
-to{width:28ch;}
-}
-
-@keyframes blinkCursor{
-50%{
-border-color:transparent;
-}
-}
 @keyframes fadeReveal{
 
 from{
@@ -2072,9 +2040,10 @@ z-index:2;
 <div class="hero-glow"></div>
 
 <p class="poetic-line">
-<span class="typing-line">An unexpected beginning,</span><br>
-<span class="typing-line second">turning into forever. </span>
+An unexpected beginning,<br>
+turnung into forever ✨
 </p>
+  
 <div class="hero-content">
 <button class="music-btn" onclick="toggleMusic()">
 Play Our Song
