@@ -260,39 +260,55 @@ rgba(255,255,255,0.07);
 
 .scroll-note{
 position:absolute;
-bottom:24px;
+bottom:28px;
 left:50%;
 transform:translateX(-50%);
-font-size:0.6rem;
-letter-spacing:3.2px;
+
+font-size:0.78rem;
+font-weight:600;
+letter-spacing:4px;
 text-transform:uppercase;
-color:rgba(242,210,138,0.78);
-animation:pulseFade 2s ease-in-out infinite;
+
+color:#f6dfaa;
+
+text-shadow:
+0 2px 12px rgba(0,0,0,0.92),
+0 0 16px rgba(212,175,55,0.45);
+
+animation:scrollGlow 2.4s ease-in-out infinite;
+
 z-index:4;
 white-space:nowrap;
 text-align:center;
 }
+
 .scroll-arrow{
 display:block;
-font-size:1.5rem;
+font-size:1.9rem;
 line-height:1;
-margin-top:4px;
-color:#d7a94f;
-text-shadow:0 0 10px rgba(215,169,79,0.5);
+margin-top:6px;
+
+color:#f1c76b;
+
+text-shadow:
+0 0 14px rgba(241,199,107,0.7);
+
 text-align:center;
 }
-@keyframes pulseFade{
+
+@keyframes scrollGlow{
 
 0%,100%{
-opacity:0.35;
+opacity:0.6;
+transform:translateX(-50%) translateY(0);
 }
 
 50%{
 opacity:1;
+transform:translateX(-50%) translateY(7px);
 }
 
 }
-
 /* MOBILE */
 
 @media(max-width:768px){
