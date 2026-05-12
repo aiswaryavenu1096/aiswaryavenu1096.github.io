@@ -1816,6 +1816,48 @@ height:300px;
 }
 
 }
+@media(max-width:768px){
+
+.moments-grid{
+display:grid !important;
+grid-template-columns:1fr 1fr !important;
+gap:16px !important;
+padding:0 !important;
+overflow:visible !important;
+}
+
+.moment-card,
+.moment-card.tilt-left,
+.moment-card.tilt-right{
+position:relative !important;
+width:100% !important;
+min-width:0 !important;
+height:180px !important;
+grid-column:auto !important;
+grid-row:auto !important;
+transform:none !important;
+animation:none !important;
+opacity:1 !important;
+z-index:1 !important;
+}
+
+.hero-card{
+grid-column:1 / -1 !important;
+grid-row:auto !important;
+height:320px !important;
+transform:none !important;
+animation:none !important;
+opacity:1 !important;
+}
+
+.moment-card img{
+width:100% !important;
+height:100% !important;
+object-fit:cover !important;
+display:block !important;
+}
+
+}
 </style>
 </head>
 
