@@ -34,18 +34,6 @@ background-attachment:fixed;
   background-color:#fffaf6;
 }
 
-/* SILK GRAIN */
-
-body::before{
-content:"";
-position:fixed;
-inset:0;
-background-image:url('https://www.transparenttextures.com/patterns/cream-paper.png');
-opacity:0.25;
-pointer-events:none;
-z-index:9999;
-}
-
 /* HERO */
 /* HERO SECTION */
 
@@ -63,44 +51,6 @@ url('./hero-new.png');
 background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
-}
-
-/* TEXTURE */
-
-.hero-texture{
-
-position:absolute;
-inset:0;
-
-background-image:
-url('https://www.transparenttextures.com/patterns/dark-embroidery.png');
-
-opacity:0.18;
-
-pointer-events:none;
-
-}
-
-/* GOLD GLOW */
-
-.hero-glow{
-
-position:absolute;
-
-width:850px;
-height:850px;
-
-border-radius:50%;
-
-background:
-radial-gradient(circle,
-rgba(212,175,55,0.10),
-transparent 70%);
-
-filter:blur(20px);
-
-animation:glowFloat 8s ease-in-out infinite alternate;
-
 }
 
 @keyframes glowFloat{
@@ -2054,13 +2004,9 @@ z-index:2;
 
 <section class="hero">
 
-
-<div class="hero-texture"></div>
-<div class="hero-glow"></div>
-
 <p class="poetic-line">
 An unexpected beginning,<br>
-turnung into forever ✨
+turning into forever ✨
 </p>
   
 <div class="hero-content">
