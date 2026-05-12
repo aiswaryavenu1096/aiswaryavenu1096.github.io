@@ -1730,34 +1730,32 @@ padding:22px 12px;
 }
 
 }
-.moments-section{
-padding:70px 14px 80px;
+.memories-section{
+padding:70px 14px 85px;
 text-align:center;
 position:relative;
 }
 
-.moments-title{
+.memories-title{
 font-family:'Cormorant Garamond',serif;
-font-size:3.4rem;
+font-size:3.6rem;
 font-weight:600;
 color:#5f2338;
 margin-bottom:14px;
 }
 
-.moments-subtitle{
+.memories-subtitle{
 max-width:720px;
-margin:0 auto 34px;
+margin:0 auto 38px;
 font-family:'Cormorant Garamond',serif;
-font-size:1.28rem;
-line-height:1.75;
+font-size:1.25rem;
+line-height:1.7;
 font-style:italic;
 font-weight:500;
 color:#5c3d4b;
-text-shadow:0 1px 0 rgba(255,255,255,0.45);
 }
 
-.moments-grid{
-  padding-top:18px;
+.memories-collage{
 max-width:980px;
 margin:auto;
 display:grid;
@@ -1766,95 +1764,50 @@ grid-auto-rows:170px;
 gap:14px;
 }
 
-.moment-card{
+.memory-photo{
 border-radius:24px;
 overflow:hidden;
 box-shadow:0 20px 55px rgba(90,50,60,0.18);
 }
 
-.moment-card img{
+.memory-photo img{
 width:100%;
 height:100%;
 object-fit:cover;
 display:block;
 }
 
-.hero-card{
-  position:relative;
-z-index:2;
+.memory-main{
 grid-column:span 2;
 grid-row:span 2;
 }
 
 @media(max-width:768px){
 
-.moments-title{
+.memories-title{
 font-size:3rem;
 }
 
-.moments-subtitle{
-font-size:1rem;
-margin-bottom:28px;
+.memories-subtitle{
+font-size:1.08rem;
+margin-bottom:30px;
 }
 
-.moments-grid{
+.memories-collage{
+display:grid;
 grid-template-columns:1fr 1fr;
 gap:12px;
 }
 
-.moment-card{
-  background:white;
-position:relative;
-z-index:1;
+.memory-photo{
 height:180px;
+border-radius:20px;
 }
 
-.hero-card{
-grid-column:span 2;
+.memory-main{
+grid-column:1 / -1;
 grid-row:auto;
-height:300px;
-}
-
-}
-@media(max-width:768px){
-
-.moments-grid{
-display:grid !important;
-grid-template-columns:1fr 1fr !important;
-gap:16px !important;
-padding:0 !important;
-overflow:visible !important;
-}
-
-.moment-card,
-.moment-card.tilt-left,
-.moment-card.tilt-right{
-position:relative !important;
-width:100% !important;
-min-width:0 !important;
-height:180px !important;
-grid-column:auto !important;
-grid-row:auto !important;
-transform:none !important;
-animation:none !important;
-opacity:1 !important;
-z-index:1 !important;
-}
-
-.hero-card{
-grid-column:1 / -1 !important;
-grid-row:auto !important;
-height:320px !important;
-transform:none !important;
-animation:none !important;
-opacity:1 !important;
-}
-
-.moment-card img{
-width:100% !important;
-height:100% !important;
-object-fit:cover !important;
-display:block !important;
+height:320px;
 }
 
 }
@@ -2133,51 +2086,48 @@ we found our forever, and our home, in each other.
 </section>
 
 <!-- GALLERY -->
-<section class="moments-section">
+<section class="memories-section">
 
-<h2 class="moments-title">
-Our Moments
-</h2>
+<h2 class="memories-title">Our Moments</h2>
 
-<p class="moments-subtitle">
+<p class="memories-subtitle">
 Little adventures, loud laughter, long walks, spontaneous trips,
 and the countless memories that brought us here.
 </p>
 
-<div class="moments-grid">
+<div class="memories-collage">
 
-<div class="moment-card hero-card">
+<div class="memory-photo memory-main">
 <img src="./cap-photo.jpg.jpeg" alt="">
 </div>
 
-<div class="moment-card">
+<div class="memory-photo">
 <img src="./tulip.jpg.jpeg" alt="">
 </div>
 
-<div class="moment-card">
+<div class="memory-photo">
 <img src="./tree.jpg.jpg" alt="">
 </div>
 
-<div class="moment-card">
+<div class="memory-photo">
 <img src="./cathedral.jpg.jpg" alt="">
 </div>
 
-<div class="moment-card">
+<div class="memory-photo">
 <img src="./mirror.jpg.jpg" alt="">
 </div>
 
-<div class="moment-card">
+<div class="memory-photo">
 <img src="./waterfall.jpg.jpg" alt="">
 </div>
 
-<div class="moment-card">
+<div class="memory-photo">
 <img src="./pink.jpeg" alt="">
 </div>
 
 </div>
 
 </section>
-
 <!-- VENUE -->
 
 <section>
